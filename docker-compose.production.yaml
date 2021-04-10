@@ -9,6 +9,7 @@ services:
         container_name: server
         working_dir: /app/server
         environment:
+            - NODE_ENV=${NODE_ENV}
             - SERVER_HOST=${SERVER_HOST}
             - SERVER_PORT=${SERVER_PORT}
             - SERVER_PROTOCOL=${SERVER_PROTOCOL}
@@ -28,6 +29,7 @@ services:
         container_name: client
         working_dir: /app/client
         environment:
+            - NODE_ENV=${NODE_ENV}
             - REACT_APP_PORT=${CLIENT_PORT}
             - REACT_APP_SERVER_HOST=${SERVER_HOST}
             - REACT_APP_SERVER_PORT=${SERVER_PORT}
