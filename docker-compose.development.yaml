@@ -1,0 +1,36 @@
+networks:
+    - app
+
+services:
+    server:
+        image: golang
+        environment:
+            - SERVER_HOST=${SERVER_HOST}
+            - SERVER_PORT=${SERVER_PORT}
+            - SERVER_PROTOCOL=${SERVER_PROTOCOL}
+        expose:
+            - ${SERVER_PORT}
+        volumes:
+            - ./server:/app/server
+            - ./server/go.mod:/app/server/go.mod
+        command: go get && go build main.go && ./main
+        networks:
+            - app
+
+    client:
+        image: node
+        environment:
+            - REACT_APP_PORT=${CLIENT_PORT}
+            - REACT_APP_SERVER_HOST=${SERVER_HOST}
+            - REACT_APP_SERVER_PORT=${SERVER_PORT}
+            - REACT_APP_SERVER_PROTOCOL=${SERVER_PROTOCOL}
+        expose:
+            - ${SERVER_PORT}
+        volumes:
+            - ./client:/app/client
+            - ./client/package.json:/app/client/package.json
+            - ./client/package-lock.json:/app/client/package-lock.json
+        command: npm install && npm run start
+        stdin_open: true
+        networks:
+            - app
