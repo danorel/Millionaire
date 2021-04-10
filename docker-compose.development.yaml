@@ -1,36 +1,46 @@
+version: "3.3"
+
 networks:
-    - app
+    app:
 
 services:
     server:
         image: golang
+        container_name: server
+        working_dir: /app/server
         environment:
             - SERVER_HOST=${SERVER_HOST}
             - SERVER_PORT=${SERVER_PORT}
             - SERVER_PROTOCOL=${SERVER_PROTOCOL}
+        restart: unless-stopped
         expose:
             - ${SERVER_PORT}
         volumes:
             - ./server:/app/server
             - ./server/go.mod:/app/server/go.mod
-        command: go get && go build main.go && ./main
+        command: >
+            sh -c "go get -u github.com/danorel/Millionaire && go build main.go && ./main"
         networks:
             - app
 
     client:
         image: node
+        container_name: client
+        working_dir: /app/client
         environment:
             - REACT_APP_PORT=${CLIENT_PORT}
             - REACT_APP_SERVER_HOST=${SERVER_HOST}
             - REACT_APP_SERVER_PORT=${SERVER_PORT}
             - REACT_APP_SERVER_PROTOCOL=${SERVER_PROTOCOL}
+        restart: unless-stopped
         expose:
             - ${SERVER_PORT}
         volumes:
             - ./client:/app/client
             - ./client/package.json:/app/client/package.json
             - ./client/package-lock.json:/app/client/package-lock.json
-        command: npm install && npm run start
+        command: >
+            sh -c "npm install && npm run start"
         stdin_open: true
         networks:
             - app
