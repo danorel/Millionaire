@@ -19,7 +19,7 @@ services:
             - ./server:/app/server
             - ./server/go.mod:/app/server/go.mod
         command: >
-            sh -c "go get && go build main.go && ./main"
+            sh -c "go mod download && go build -o bin/application && ./bin/application"
         networks:
             - app
 

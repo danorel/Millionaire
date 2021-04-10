@@ -19,7 +19,7 @@ services:
             - ./server:/app/server
             - ./server/go.mod:/app/server/go.mod
         command: >
-            sh -c "go mod download && go build -o bin/application && ./bin/application"
+            sh -c "go get github.com/cespare/reflex && go mod download && reflex -r '(\.go$$|go\.mod)' -s go run ."
         networks:
             - app
 
@@ -35,7 +35,9 @@ services:
             - REACT_APP_SERVER_PROTOCOL=${SERVER_PROTOCOL}
         restart: unless-stopped
         expose:
-            - ${SERVER_PORT}
+            - ${CLIENT_PORT}
+        ports:
+            - ${CLIENT_PORT}:${CLIENT_PORT}
         volumes:
             - ./client:/app/client
             - ./client/package.json:/app/client/package.json
