@@ -22,10 +22,10 @@ func (c *ServerConfig) Addr() string {
 	return c.addr
 }
 
-var config *ServerConfig
+var Config *ServerConfig
 
-func DefaultConfig() {
-	config = &ServerConfig{
+func Initialize() {
+	Config = &ServerConfig{
 		protocol: os.Getenv("SERVER_PROTOCOL"),
 		host:	  os.Getenv("SERVER_HOST"),
 		port:	  os.Getenv("SERVER_PORT"),
