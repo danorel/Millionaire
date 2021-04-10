@@ -11,7 +11,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/danorel/Millionaire/config/server"
+	"github.com/danorel/Millionaire/config"
 )
 
 func rootRouteHandler(w http.ResponseWriter, r *http.Request) {
@@ -31,16 +31,21 @@ func rootRouteHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func startHttpServer(wg *sync.WaitGroup) *http.Server {
+	log.Println("Reading configurations...")
+
+	config.Initialize()
+	httpConfig := *config.Config
+
 	log.Println("Starting server...")
 
-	srv := &http.Server{Addr: &server.DefaultConfig()}
+	srv := &http.Server{Addr: httpConfig.Addr()}
 
 	http.HandleFunc("/api", rootRouteHandler)
 
 	go func() {
 		defer wg.Done() // let main know we are done cleaning up
 
-		log.Println("Server is running on port 8081 successfully!")
+		log.Printf("Server is running on port %v successfully!", httpConfig.Port())
 
 		// always returns error. ErrServerClosed on graceful close
 		if err := srv.ListenAndServe(); err != http.ErrServerClosed {
