@@ -4,22 +4,21 @@
     "description": "Golang web application as technical assignment",
     "main": "index.js",
     "scripts": {
-        "start:lint": "cd client && npm run lint",
+        "start:lint": "cd client && npm install && npm run lint",
         "start:formatting": "prettier --write \"client/**/*.{js,jsx,ts,tsx,html,css,json}\" --ignore-unknown",
         "start:development": "docker-compose -f docker-compose.development.yaml up",
         "start:production": "docker-compose -f docker-compose.production.yaml up"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged",
-            "post-commit": "git push origin HEAD"
+            "pre-commit": "lint-staged"
         }
     },
     "lint-staged": {
         "*": [
-            "npm run format"
+            "npm run start:formatting"
         ],
-        "client/**/*.{js,jsx,ts,tsx,html,css,scss,json}": [
+        "client/**/*.{js,jsx,ts,tsx,html,css,json}": [
             "npm run start:lint",
             "git add"
         ]
@@ -39,7 +38,7 @@
     },
     "homepage": "https://github.com/danorel/Millionaire#readme",
     "devDependencies": {
-        "husky": "^6.0.0",
+        "husky": "^4.2.3",
         "lint-staged": "^10.5.4",
         "prettier": "2.2.1"
     }
