@@ -1,0 +1,28 @@
+networks:
+    - app
+
+services:
+    server:
+        build:
+            context: /client
+            dockerfile: Dockerfile
+        environment:
+            - SERVER_HOST=${SERVER_HOST}
+            - SERVER_PORT=${SERVER_PORT}
+            - SERVER_PROTOCOL=${SERVER_PROTOCOL}
+        expose:
+            - ${SERVER_PORT}
+        networks:
+            - app
+
+    client:
+        build:
+            context: /server
+            dockerfile: Dockerfile
+        environment:
+            - REACT_APP_PORT=${CLIENT_PORT}
+            - SERVER_HOST=${SERVER_HOST}
+            - SERVER_PORT=${SERVER_PORT}
+            - SERVER_PROTOCOL=${SERVER_PROTOCOL}
+        networks:
+            - app

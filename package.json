@@ -4,7 +4,8 @@
     "description": "Golang web application as technical assignment",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "development": "docker-compose -f docker-compose.development.yaml",
+        "production": "docker-compose -f docker-compose.production.yaml"
     },
     "repository": {
         "type": "git",
