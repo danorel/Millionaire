@@ -10,6 +10,8 @@ import (
 	"sync"
 	"syscall"
 	"time"
+
+	"github.com/danorel/Millionaire/config/server"
 )
 
 func rootRouteHandler(w http.ResponseWriter, r *http.Request) {
@@ -31,9 +33,9 @@ func rootRouteHandler(w http.ResponseWriter, r *http.Request) {
 func startHttpServer(wg *sync.WaitGroup) *http.Server {
 	log.Println("Starting server...")
 
-	srv := &http.Server{Addr: ":8081"}
+	srv := &http.Server{Addr: &server.DefaultConfig()}
 
-	http.HandleFunc("/", rootRouteHandler)
+	http.HandleFunc("/api", rootRouteHandler)
 
 	go func() {
 		defer wg.Done() // let main know we are done cleaning up
@@ -51,11 +53,16 @@ func startHttpServer(wg *sync.WaitGroup) *http.Server {
 	return srv
 }
 
+func startViewServing() {
+	http.Handle("/", http.FileServer(http.Dir("client/build")))
+}
+
 func main() {
 	httpServerExitDone := &sync.WaitGroup{}
 	httpServerExitDone.Add(1)
 
 	server := startHttpServer(httpServerExitDone)
+	startViewServing()
 
 	// Wait for kill signal of channel
 	quit := make(chan os.Signal)
