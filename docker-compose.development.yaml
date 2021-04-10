@@ -19,7 +19,7 @@ services:
             - ./server:/app/server
             - ./server/go.mod:/app/server/go.mod
         command: >
-            sh -c "go get -u github.com/danorel/Millionaire && go build main.go && ./main"
+            sh -c "go mod download && go build -o bin/application && ./bin/application"
         networks:
             - app
 
@@ -28,6 +28,7 @@ services:
         container_name: client
         working_dir: /app/client
         environment:
+            - CHOKIDAR_USEPOLLING=true
             - REACT_APP_PORT=${CLIENT_PORT}
             - REACT_APP_SERVER_HOST=${SERVER_HOST}
             - REACT_APP_SERVER_PORT=${SERVER_PORT}
