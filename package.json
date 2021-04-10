@@ -1,0 +1,23 @@
+{
+    "name": "millionaire",
+    "version": "1.0.0",
+    "description": "Golang web application as technical assignment",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/danorel/Millionaire.git"
+    },
+    "keywords": [
+        "Golang",
+        "React"
+    ],
+    "author": "Danyil Orel",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/danorel/Millionaire/issues"
+    },
+    "homepage": "https://github.com/danorel/Millionaire#readme"
+}
