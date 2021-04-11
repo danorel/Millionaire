@@ -34,18 +34,18 @@ func startHttpServer(wg *sync.WaitGroup) *http.Server {
 	log.Println("Reading configurations...")
 
 	config.Initialize()
-	httpConfig := *config.Config
+	serverConfig := (*config.Config).ServerConfig()
 
 	log.Println("Starting server...")
 
-	srv := &http.Server{Addr: httpConfig.Addr()}
+	srv := &http.Server{Addr: serverConfig.Addr()}
 
 	http.HandleFunc("/api", rootRouteHandler)
 
 	go func() {
 		defer wg.Done() // let main know we are done cleaning up
 
-		log.Printf("Server is running on port %v successfully!", httpConfig.Port())
+		log.Printf("Server is running on port %v successfully!", serverConfig.Port())
 
 		// always returns error. ErrServerClosed on graceful close
 		if err := srv.ListenAndServe(); err != http.ErrServerClosed {
@@ -59,7 +59,11 @@ func startHttpServer(wg *sync.WaitGroup) *http.Server {
 }
 
 func startViewServing() {
-	http.Handle("/", http.FileServer(http.Dir("client/build")))
+	internalConfig 	  := (*config.Config).InternalConfig()
+
+	if internalConfig.Mode() != "development" {
+		http.Handle("/", http.FileServer(http.Dir("client/build")))
+	}
 }
 
 func main() {

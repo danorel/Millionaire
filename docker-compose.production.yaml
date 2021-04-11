@@ -40,3 +40,18 @@ services:
             - ./client/package-lock.json:/app/client/package-lock.json
         command: >
             sh -c "npm install && npm run build"
+
+    proxy:
+        image: nginx
+        container_name: proxy
+        restart: always
+        environment:
+            - SERVER_PORT=${SERVER_PORT}
+        volumes:
+            - ./infrastructure/nginx/templates:/etc/nginx/templates
+            - ./infrastructure/nginx/options-ssl-nginx.conf:/etc/nginx/conf.d/options-ssl-nginx.conf
+        ports:
+            - 80:80
+            - 443:443
+        networks:
+            - app
