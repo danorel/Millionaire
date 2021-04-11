@@ -32,8 +32,7 @@
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 56px;
-    line-height: 116%;
+    font-size: 7vmin;
 
     /* or 65px */
     display: flex;
@@ -52,7 +51,7 @@
 #button__primary {
     /* Button / Primary / Desktop / Inactive */
     position: static;
-    width: 296px;
+    width: 300px;
     height: 64px;
 
     /* Inside Auto Layout */
@@ -84,33 +83,70 @@
 
 #img__primary {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
+    .row {
+        flex-flow: row wrap;
+    }
+
+    #title__primary {
+        font-size: 10vmin;
+        text-align: center;
+    }
+
+    #button__primary {
+        width: 240px;
+        height: 44px;
+    }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
+    .row {
+        flex-flow: row wrap;
+    }
+
+    #title__primary {
+        font-size: 7vmin;
+        text-align: center;
+    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
+    .row {
+        flex-flow: row wrap;
+    }
+
+    #title__primary {
+        font-size: 7vmin;
+        text-align: center;
+    }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-    #img__primary {
-        width: 80%;
-        height: 80%;
+    .row {
+        flex-flow: row nowrap;
+    }
+
+    #title__primary {
+        font-size: 7vmin;
+        text-align: left;
     }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-    #img__primary {
-        width: 80%;
-        height: 80%;
+    .row {
+        flex-flow: row nowrap;
+    }
+
+    #title__primary {
+        font-size: 7vmin;
+        text-align: left;
     }
 }

@@ -14,6 +14,6 @@ export const ImageComponent: React.FC<ImageProps> = ({
     styles
 }: ImageProps) => (
     <React.Fragment>
-        <img src={src} alt={alt} className={styles.img__primary} />
+        <img src={src} alt={alt} id={styles.img__primary} />
     </React.Fragment>
 )

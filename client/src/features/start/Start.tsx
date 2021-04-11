@@ -21,9 +21,13 @@ export const StartComponent: React.FC<StartProps> = () => (
                     <div className={styles.column}>
                         <TitleComponent
                             styles={styles}
-                            value={"Who wants to be a millionaire?"}
+                            text={"Who wants to be a millionaire?"}
                         />
-                        <ButtonComponent styles={styles} path={"/play"} />
+                        <ButtonComponent
+                            styles={styles}
+                            text={"Start"}
+                            redirect={"/play"}
+                        />
                     </div>
                 </div>
             </div>
