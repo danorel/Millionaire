@@ -1,19 +1,22 @@
-import styles from "../Start.module.css"
 import React from "react"
 
 type ButtonProps = {
-    path: string
+    readonly path: string
+    readonly styles: {
+        readonly [key: string]: string
+    }
 }
 
 export const ButtonComponent: React.FC<ButtonProps> = ({
-    path
+    path,
+    styles
 }: ButtonProps) => (
     <React.Fragment>
         <button
             onClick={() => (window.location.href = path)}
             id={styles.button__primary}
         >
-            Start
+            <span id={styles.button__primary_text}>Start</span>
         </button>
     </React.Fragment>
 )

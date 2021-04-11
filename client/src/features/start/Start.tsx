@@ -9,15 +9,22 @@ type StartProps = {}
 export const StartComponent: React.FC<StartProps> = () => (
     <React.Fragment>
         <div id={styles.div__container}>
-            <div className={styles.row}>
-                <div className={styles.column}>
-                    <ImageComponent alt={"Millionaire"} src={srcStartHand} />
-                </div>
-                <div className={styles.column}>
-                    <TitleComponent
-                        value={"Who want's to become a millionaire?"}
-                    />
-                    <ButtonComponent path={"/play"} />
+            <div id={styles.div__container_centrify}>
+                <div className={styles.row}>
+                    <div className={styles.column}>
+                        <ImageComponent
+                            styles={styles}
+                            alt={"Millionaire"}
+                            src={srcStartHand}
+                        />
+                    </div>
+                    <div className={styles.column}>
+                        <TitleComponent
+                            styles={styles}
+                            value={"Who wants to be a millionaire?"}
+                        />
+                        <ButtonComponent styles={styles} path={"/play"} />
+                    </div>
                 </div>
             </div>
         </div>
