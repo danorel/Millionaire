@@ -6,6 +6,7 @@
 
 .column {
     flex-direction: column;
+    text-align: center;
 }
 
 #div__container {
@@ -43,33 +44,31 @@
 
     /* Inside Auto Layout */
     flex: none;
-    order: 0;
+    order: 1;
     flex-grow: 0;
-    margin: 64px 0;
+    margin: 32px 0;
 }
 
 #button__primary {
     /* Button / Primary / Desktop / Inactive */
-    position: static;
-    width: 300px;
-    height: 64px;
-
-    /* Inside Auto Layout */
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 64px 0px;
+    width: 4vmin;
+    height: 7vmax;
 
     /* Orange-100 */
     background: #ff8b37;
+    border: none;
     border-radius: 12px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 32px 0;
 }
 
 #button__primary_text {
-    height: 23px;
-
     /* Desktop / Button */
-    font-family: Inter monospace;
+    font-family: Inter;
     font-style: normal;
     font-weight: 600;
     font-size: 23px;
@@ -92,14 +91,18 @@
         flex-flow: row wrap;
     }
 
-    #title__primary {
-        font-size: 10vmin;
-        text-align: center;
+    #button__primary {
+        width: 80%;
+        height: 7vmax;
     }
 
-    #button__primary {
-        width: 240px;
-        height: 44px;
+    #button__primary_text {
+        font-size: 6vmin;
+    }
+
+    #title__primary {
+        font-size: 9vmin;
+        text-align: center;
     }
 }
 
@@ -109,8 +112,17 @@
         flex-flow: row wrap;
     }
 
+    #button__primary {
+        width: 80%;
+        height: 7vmax;
+    }
+
+    #button__primary_text {
+        font-size: 5vmin;
+    }
+
     #title__primary {
-        font-size: 7vmin;
+        font-size: 6vmin;
         text-align: center;
     }
 }
@@ -121,8 +133,17 @@
         flex-flow: row wrap;
     }
 
+    #button__primary {
+        width: 80%;
+        height: 7vmax;
+    }
+
+    #button__primary_text {
+        font-size: 4vmin;
+    }
+
     #title__primary {
-        font-size: 7vmin;
+        font-size: 6vmin;
         text-align: center;
     }
 }
@@ -131,6 +152,15 @@
 @media only screen and (min-width: 992px) {
     .row {
         flex-flow: row nowrap;
+    }
+
+    .column {
+        text-align: inherit;
+    }
+
+    #button__primary {
+        width: 40vmin;
+        height: 5vmax;
     }
 
     #title__primary {
@@ -143,6 +173,15 @@
 @media only screen and (min-width: 1200px) {
     .row {
         flex-flow: row nowrap;
+    }
+
+    .column {
+        text-align: inherit;
+    }
+
+    #button__primary {
+        width: 40vmin;
+        height: 5vmax;
     }
 
     #title__primary {
