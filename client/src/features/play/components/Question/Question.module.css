@@ -1,0 +1,14 @@
+.span__primary {
+    /* Desktop / ?Question */
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 116%;
+    /* or 37px */
+    display: flex;
+    align-items: center;
+
+    /* Black-100 */
+    color: #1c1c21;
+}

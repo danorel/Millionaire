@@ -5,7 +5,7 @@ type GridBoxProps = {
     children: React.ReactNode
 }
 
-export const GridBoxLayout: React.FC<GridBoxProps> = ({
+export const GridBoxContainer: React.FC<GridBoxProps> = ({
     children
 }: GridBoxProps) => (
     <React.Fragment>
@@ -13,7 +13,7 @@ export const GridBoxLayout: React.FC<GridBoxProps> = ({
     </React.Fragment>
 )
 
-export const GridBoxScreen: React.FC<GridBoxProps> = ({
+export const GridBoxItemScreen: React.FC<GridBoxProps> = ({
     children
 }: GridBoxProps) => (
     <React.Fragment>
@@ -21,7 +21,7 @@ export const GridBoxScreen: React.FC<GridBoxProps> = ({
     </React.Fragment>
 )
 
-export const GridBoxLevels: React.FC<GridBoxProps> = ({
+export const GridBoxItemLevels: React.FC<GridBoxProps> = ({
     children
 }: GridBoxProps) => (
     <React.Fragment>

@@ -1,4 +1,8 @@
 import { GridColumn } from "./GridColumn/GridColumn"
-import { GridBoxLayout, GridBoxScreen, GridBoxLevels } from "./GridBox/GridBox"
+import {
+    GridBoxContainer,
+    GridBoxItemScreen,
+    GridBoxItemLevels
+} from "./GridBox/GridBox"
 
-export { GridColumn, GridBoxScreen, GridBoxLayout, GridBoxLevels }
+export { GridColumn, GridBoxItemScreen, GridBoxContainer, GridBoxItemLevels }
