@@ -1,8 +1,18 @@
 .container__centrify {
+    /**
+    * Flexbox attributes.
+    */
     display: flex;
     flex-flow: row wrap;
     align-content: center;
     justify-content: space-evenly;
+
+    /**
+     * Parameters:
+     * - Dimensions.
+     */
+    width: 100%;
+    height: auto;
 }
 
 /* Custom, iPhone Retina */
