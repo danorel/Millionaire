@@ -14,7 +14,7 @@
     font-family: Inter;
     font-style: normal;
     font-weight: 600;
-    font-size: 23px;
+    font-size: 4vmin;
 
     align-items: center;
     text-align: center;
@@ -45,7 +45,7 @@
     }
 
     .button__primary_text {
-        font-size: 5vmin;
+        font-size: 3.5vmin;
     }
 }
 
@@ -58,7 +58,7 @@
     }
 
     .button__primary_text {
-        font-size: 4vmin;
+        font-size: 3.5vmin;
     }
 }
 
@@ -69,6 +69,10 @@
         height: 5vmax;
         align-self: normal;
     }
+
+    .button__primary_text {
+        font-size: 3.5vmin;
+    }
 }
 
 /* Large Devices, Wide Screens */
@@ -77,5 +81,9 @@
         width: 40vmin;
         height: 5vmax;
         align-self: normal;
+    }
+
+    .button__primary_text {
+        font-size: 3.5vmin;
     }
 }
