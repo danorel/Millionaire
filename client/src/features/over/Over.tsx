@@ -1,5 +1,5 @@
 import React from "react"
-import srcStartHand from "../../assets/start_hand.svg"
+import src__SVG_StartHand from "../../assets/start_hand.svg"
 
 import { FlexRow, FlexColumn } from "../../components/layout/flex"
 import {
@@ -22,7 +22,7 @@ export const OverComponent: React.FC<OverProps> = () => (
                     <FlexColumn>
                         <ImageComponent
                             alt={"Millionaire"}
-                            src={srcStartHand}
+                            src={src__SVG_StartHand}
                         />
                     </FlexColumn>
                     <FlexColumn>
