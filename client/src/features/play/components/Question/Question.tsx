@@ -1,14 +1,18 @@
 import React from "react"
 import styles from "./Question.module.css"
 
-type QuestionProps = {}
+type QuestionProps = {
+    text: string
+}
 
-export const QuestionComponent: React.FC<QuestionProps> = (
-    props: QuestionProps
-) => (
+export const QuestionComponent: React.FC<QuestionProps> = ({
+    text
+}: QuestionProps) => (
     <React.Fragment>
-        <span className={styles.span__primary}>
-            How old your elder brother was 10 years before you was born, mate?
-        </span>
+        <div className={styles.div__grid_layout}>
+            <div className={styles.div__grid_item}>
+                <span className={styles.span__primary}>{text}</span>
+            </div>
+        </div>
     </React.Fragment>
 )

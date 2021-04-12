@@ -1,3 +1,16 @@
+.div__grid_layout {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 15% auto 15%;
+}
+
+.div__grid_item {
+    grid-row-start: 1;
+    grid-row-end: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
 .span__primary {
     /* Desktop / ?Question */
     font-family: Inter, sans-serif;

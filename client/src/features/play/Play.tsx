@@ -19,7 +19,11 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                 <GridBoxContainer>
                     <GridBoxItemScreen>
                         <div className={styles.div__flex_screen}>
-                            <QuestionComponent />
+                            <QuestionComponent
+                                text={
+                                    "How old your elder brother was 10 years before you was born, mate?"
+                                }
+                            />
                             <AnswersComponent />
                         </div>
                     </GridBoxItemScreen>
