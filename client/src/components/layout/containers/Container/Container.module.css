@@ -1,5 +1,12 @@
-.container,
-.container__background {
+.container {
+    /**
+     * Flexbox attributes.
+     */
+    display: flex;
+
+    /**
+     * Positional parameters
+     */
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -9,6 +16,31 @@
     margin: 0 auto;
 }
 
-.container__background {
-    background: linear-gradient(to right bottom, #ffffff 50%, #fff3eb 50%);
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    .container {
+        align-content: space-between;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    .container {
+        align-content: space-between;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    .container {
+        align-content: space-between;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
 }

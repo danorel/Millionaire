@@ -20,14 +20,16 @@ type FlexColumnProps = {
 
 export const FlexColumn: React.FC<FlexColumnProps> = ({
     children,
-    justifyContent = "space-evenly"
+    justifyContent = "center"
 }: FlexColumnProps) => (
     <React.Fragment>
         <div
+            style={
+                {
+                    // justifyContent: justifyContent
+                }
+            }
             className={styles.column}
-            style={{
-                justifyContent: justifyContent
-            }}
         >
             {children}
         </div>

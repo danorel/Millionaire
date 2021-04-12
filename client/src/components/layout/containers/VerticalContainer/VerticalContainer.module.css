@@ -1,4 +1,8 @@
 .container__centrify {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: space-evenly;
 }
 
 /* Custom, iPhone Retina */
@@ -15,22 +19,8 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-    .container__centrify {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-    .container__centrify {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-    }
 }
