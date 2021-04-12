@@ -4,6 +4,10 @@ import srcStartHand from "../../assets/start_hand.svg"
 
 import { FlexRow, FlexColumn } from "../../components/alignment/flex"
 import {
+    ColoredContainer,
+    VerticalContainer
+} from "../../components/containers"
+import {
     ImageComponent,
     TitleComponent,
     ButtonComponent
@@ -13,8 +17,8 @@ type StartProps = {}
 
 export const StartComponent: React.FC<StartProps> = () => (
     <React.Fragment>
-        <div id={styles.div__container}>
-            <div id={styles.div__container_centrify}>
+        <ColoredContainer>
+            <VerticalContainer>
                 <FlexRow>
                     <FlexColumn>
                         <ImageComponent
@@ -35,7 +39,7 @@ export const StartComponent: React.FC<StartProps> = () => (
                         />
                     </FlexColumn>
                 </FlexRow>
-            </div>
-        </div>
+            </VerticalContainer>
+        </ColoredContainer>
     </React.Fragment>
 )
