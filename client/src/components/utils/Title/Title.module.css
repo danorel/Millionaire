@@ -4,7 +4,7 @@
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 7vmin;
+    font-size: 6vmin;
 
     /* Black-100 */
     color: #1c1c21;
@@ -72,7 +72,7 @@
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
     .span__primary_text {
-        font-size: 7vmin;
+        font-size: 6.8vmin;
         text-align: left;
     }
 
@@ -85,7 +85,7 @@
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
     .span__primary_text {
-        font-size: 7vmin;
+        font-size: 6.8vmin;
         text-align: left;
     }
 
