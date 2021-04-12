@@ -1,0 +1,27 @@
+.div__grid_layout {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 15% auto 15%;
+}
+
+.div__grid_item {
+    grid-row-start: 1;
+    grid-row-end: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.span__primary {
+    /* Desktop / ?Question */
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 116%;
+    /* or 37px */
+    display: flex;
+    align-items: center;
+
+    /* Black-100 */
+    color: #1c1c21;
+}

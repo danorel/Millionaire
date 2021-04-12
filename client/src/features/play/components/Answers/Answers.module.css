@@ -1,0 +1,20 @@
+.grid__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% auto auto 10%;
+    grid-template-rows: auto;
+}
+
+.grid__item_left {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: auto;
+}
+
+.grid__item_right {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: auto;
+}
