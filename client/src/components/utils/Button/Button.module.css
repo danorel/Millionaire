@@ -34,6 +34,7 @@
     .button__primary {
         width: 80%;
         height: 7vmax;
+        align-self: flex-end;
     }
 
     .button__primary_text {
@@ -46,6 +47,7 @@
     .button__primary {
         width: 80%;
         height: 7vmax;
+        align-self: flex-end;
     }
 
     .button__primary_text {
@@ -58,6 +60,7 @@
     .button__primary {
         width: 80%;
         height: 7vmax;
+        align-self: flex-end;
     }
 
     .button__primary_text {

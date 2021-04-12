@@ -5,7 +5,7 @@ import { FlexRow, FlexColumn } from "../../components/layout/flex"
 import {
     ColoredContainer,
     VerticalContainer
-} from "../../components/containers"
+} from "../../components/layout/containers"
 import {
     ImageComponent,
     TitleComponent,
