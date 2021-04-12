@@ -1,14 +1,3 @@
-.row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.column {
-    flex-direction: column;
-    text-align: center;
-}
-
 #div__container {
     position: absolute;
     height: 100vh;
@@ -87,10 +76,6 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
-    .row {
-        flex-flow: row wrap;
-    }
-
     #button__primary {
         width: 80%;
         height: 7vmax;
@@ -108,10 +93,6 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-    .row {
-        flex-flow: row wrap;
-    }
-
     #button__primary {
         width: 80%;
         height: 7vmax;
@@ -129,10 +110,6 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-    .row {
-        flex-flow: row wrap;
-    }
-
     #button__primary {
         width: 80%;
         height: 7vmax;
@@ -150,14 +127,6 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-    .row {
-        flex-flow: row nowrap;
-    }
-
-    .column {
-        text-align: inherit;
-    }
-
     #button__primary {
         width: 40vmin;
         height: 5vmax;
@@ -171,14 +140,6 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-    .row {
-        flex-flow: row nowrap;
-    }
-
-    .column {
-        text-align: inherit;
-    }
-
     #button__primary {
         width: 40vmin;
         height: 5vmax;
