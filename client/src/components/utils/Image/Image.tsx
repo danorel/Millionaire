@@ -1,19 +1,16 @@
 import React from "react"
+import styles from "./Image.module.css"
 
 type ImageProps = {
     readonly alt: string
     readonly src: string
-    readonly styles: {
-        readonly [key: string]: string
-    }
 }
 
 export const ImageComponent: React.FC<ImageProps> = ({
     src,
-    alt,
-    styles
+    alt
 }: ImageProps) => (
     <React.Fragment>
-        <img src={src} alt={alt} id={styles.img__primary} />
+        <img src={src} alt={alt} className={styles.img__primary} />
     </React.Fragment>
 )

@@ -1,0 +1,60 @@
+.title__primary {
+    /* Desktop / Headline */
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 7vmin;
+
+    /* or 65px */
+    display: flex;
+    align-items: center;
+
+    /* Black-100 */
+    color: #1c1c21;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 32px 0;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    .title__primary {
+        font-size: 9vmin;
+        text-align: center;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    .title__primary {
+        font-size: 6vmin;
+        text-align: center;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    .title__primary {
+        font-size: 6vmin;
+        text-align: center;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    .title__primary {
+        font-size: 7vmin;
+        text-align: left;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+    .title__primary {
+        font-size: 7vmin;
+        text-align: left;
+    }
+}

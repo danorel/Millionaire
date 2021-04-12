@@ -1,17 +1,12 @@
 import React from "react"
+import styles from "./Title.module.css"
 
 type TitleProps = {
     readonly text: string
-    readonly styles: {
-        readonly [key: string]: string
-    }
 }
 
-export const TitleComponent: React.FC<TitleProps> = ({
-    text,
-    styles
-}: TitleProps) => (
+export const TitleComponent: React.FC<TitleProps> = ({ text }: TitleProps) => (
     <React.Fragment>
-        <span id={styles.title__primary}>{text}</span>
+        <span className={styles.title__primary}>{text}</span>
     </React.Fragment>
 )
