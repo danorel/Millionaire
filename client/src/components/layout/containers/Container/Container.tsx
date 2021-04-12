@@ -3,23 +3,25 @@ import styles from "./Container.module.css"
 
 type ContainerProps = {
     children: React.ReactNode
-    backgroundColor?: string
+    background?: boolean
 }
 
-export const Container: React.FC<ContainerProps> = (props: ContainerProps) => {
+export const Container: React.FC<ContainerProps> = ({
+    children,
+    background = false
+}: ContainerProps) => {
     return (
         <React.Fragment>
-            <div className={styles.container}>{props.children}</div>
-        </React.Fragment>
-    )
-}
-
-export const ColoredContainer: React.FC<ContainerProps> = (
-    props: ContainerProps
-) => {
-    return (
-        <React.Fragment>
-            <div className={styles.container__background}>{props.children}</div>
+            <div
+                style={{
+                    background: background
+                        ? "linear-gradient(to right bottom, #ffffff 50%, #fff3eb 50%)"
+                        : "undefined"
+                }}
+                className={styles.container}
+            >
+                {children}
+            </div>
         </React.Fragment>
     )
 }

@@ -1,9 +1,13 @@
 import React from "react"
 import src__SVG_StartHand from "../../assets/start_hand.svg"
 
-import { FlexRow, FlexColumn } from "../../components/layout/flex"
 import {
-    ColoredContainer,
+    FlexRow,
+    FlexColumn,
+    FlexColumnGroup
+} from "../../components/layout/flex"
+import {
+    Container,
     VerticalContainer
 } from "../../components/layout/containers"
 import {
@@ -16,7 +20,7 @@ type StartProps = {}
 
 export const StartComponent: React.FC<StartProps> = () => (
     <React.Fragment>
-        <ColoredContainer>
+        <Container background>
             <VerticalContainer>
                 <FlexRow>
                     <FlexColumn>
@@ -26,13 +30,18 @@ export const StartComponent: React.FC<StartProps> = () => (
                         />
                     </FlexColumn>
                     <FlexColumn>
-                        <TitleComponent
-                            text={"Who wants to be a millionaire?"}
-                        />
-                        <ButtonComponent text={"Start"} redirect={"/play"} />
+                        <FlexColumnGroup>
+                            <TitleComponent
+                                text={"Who wants to be a millionaire?"}
+                            />
+                            <ButtonComponent
+                                text={"Start"}
+                                redirect={"/play"}
+                            />
+                        </FlexColumnGroup>
                     </FlexColumn>
                 </FlexRow>
             </VerticalContainer>
-        </ColoredContainer>
+        </Container>
     </React.Fragment>
 )

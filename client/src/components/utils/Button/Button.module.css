@@ -28,6 +28,7 @@
     .button__primary {
         width: 80%;
         height: 7vmax;
+        align-self: center;
     }
 
     .button__primary_text {
@@ -40,6 +41,7 @@
     .button__primary {
         width: 80%;
         height: 7vmax;
+        align-self: center;
     }
 
     .button__primary_text {
@@ -52,6 +54,7 @@
     .button__primary {
         width: 80%;
         height: 7vmax;
+        align-self: center;
     }
 
     .button__primary_text {
@@ -64,6 +67,7 @@
     .button__primary {
         width: 40vmin;
         height: 5vmax;
+        align-self: normal;
     }
 }
 
@@ -72,5 +76,6 @@
     .button__primary {
         width: 40vmin;
         height: 5vmax;
+        align-self: normal;
     }
 }

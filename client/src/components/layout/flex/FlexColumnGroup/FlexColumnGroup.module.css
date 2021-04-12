@@ -1,4 +1,5 @@
-.column {
+.column__group {
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-flow: column nowrap;
@@ -6,43 +7,38 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
-    .column {
-        height: 50%;
+    .column__group {
         flex-flow: column wrap;
-        justify-content: center;
+        justify-content: space-around;
     }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-    .column {
-        height: 50%;
+    .column__group {
         flex-flow: column wrap;
-        justify-content: center;
+        justify-content: space-around;
     }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-    .column {
-        height: 50%;
+    .column__group {
         flex-flow: column wrap;
-        justify-content: center;
+        justify-content: space-around;
     }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-    .column {
-        flex-flow: column nowrap;
+    .column__group {
         justify-content: space-evenly;
     }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-    .column {
-        flex-flow: column nowrap;
+    .column__group {
         justify-content: space-evenly;
     }
 }
