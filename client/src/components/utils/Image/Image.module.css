@@ -2,3 +2,40 @@
     width: 100%;
     height: auto;
 }
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    .img__primary {
+        margin-top: auto;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    .img__primary {
+        margin-top: auto;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    .img__primary {
+        margin-top: auto;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    .img__primary {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+    .img__primary {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
