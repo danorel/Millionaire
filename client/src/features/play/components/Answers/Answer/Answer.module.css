@@ -4,7 +4,7 @@
      * Background properties.
      * Working with svg button, fitting it on full div.
      */
-    background: #ffffff url("../../../../../assets/button.svg") no-repeat;
+    background: #ffffff url("../../../../../assets/button.svg") no-repeat center;
     background-size: 100% auto;
 }
 
