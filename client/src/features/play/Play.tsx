@@ -1,7 +1,6 @@
 import React from "react"
 import styles from "./Play.module.css"
 
-import { Container } from "../../components/layout/containers"
 import {
     GridBoxItemScreen,
     GridBoxContainer,
@@ -9,13 +8,14 @@ import {
 } from "../../components/layout/grid"
 import { QuestionComponent } from "./components/Question/Question"
 import { AnswersComponent } from "./components/Answers/Answers"
+import { LevelsComponent } from "./components/Levels/Levels"
 
 type PlayProps = {}
 
 export const PlayComponent: React.FC<PlayProps> = () => {
     return (
         <React.Fragment>
-            <Container>
+            <div className={styles.div__container}>
                 <GridBoxContainer>
                     <GridBoxItemScreen>
                         <div className={styles.div__flex_screen}>
@@ -28,10 +28,10 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                         </div>
                     </GridBoxItemScreen>
                     <GridBoxItemLevels>
-                        Something to the right
+                        <LevelsComponent />
                     </GridBoxItemLevels>
                 </GridBoxContainer>
-            </Container>
+            </div>
         </React.Fragment>
     )
 }
