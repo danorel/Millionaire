@@ -1,41 +1,40 @@
 .column {
-    height: 100%;
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    justify-content: space-between;
+    flex-flow: column nowrap;
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
     .column {
-        width: 100%;
+        flex-flow: column wrap;
     }
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
     .column {
-        width: 100%;
+        flex-flow: column wrap;
     }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
     .column {
-        width: 100%;
+        flex-flow: column wrap;
     }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
     .column {
-        text-align: inherit;
+        flex-flow: column nowrap;
     }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
     .column {
-        text-align: inherit;
+        flex-flow: column nowrap;
     }
 }

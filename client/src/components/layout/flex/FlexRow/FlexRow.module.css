@@ -1,9 +1,7 @@
 .row {
-    width: 100%;
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    flex-flow: row nowrap;
 }
 
 /* Custom, iPhone Retina */
