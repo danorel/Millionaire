@@ -1,7 +1,11 @@
 import React from "react"
 import src__SVG_StartHand from "../../assets/start_hand.svg"
 
-import { FlexRow, FlexColumn } from "../../components/layout/flex"
+import {
+    FlexRow,
+    FlexColumn,
+    FlexColumnGroup
+} from "../../components/layout/flex"
 import {
     Container,
     VerticalContainer
@@ -26,14 +30,16 @@ export const OverComponent: React.FC<OverProps> = () => (
                         />
                     </FlexColumn>
                     <FlexColumn>
-                        <TitleComponent
-                            text={"$8,000 earned"}
-                            header={"Total score:"}
-                        />
-                        <ButtonComponent
-                            text={"Try again"}
-                            redirect={"/play"}
-                        />
+                        <FlexColumnGroup>
+                            <TitleComponent
+                                text={"$8,000 earned"}
+                                header={"Total score:"}
+                            />
+                            <ButtonComponent
+                                text={"Try again"}
+                                redirect={"/play"}
+                            />
+                        </FlexColumnGroup>
                     </FlexColumn>
                 </FlexRow>
             </VerticalContainer>
