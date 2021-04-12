@@ -1,0 +1,14 @@
+.container,
+.container__background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+}
+
+.container__background {
+    background: linear-gradient(to right bottom, #ffffff 50%, #fff3eb 50%);
+}

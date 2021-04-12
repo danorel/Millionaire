@@ -1,0 +1,85 @@
+.button__primary {
+    /* Button / Primary / Desktop / Inactive */
+    width: 4vmin;
+    height: 7vmax;
+
+    /* Orange-100 */
+    background: #ff8b37;
+    border: none;
+    border-radius: 12px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 32px 0;
+}
+
+.button__primary_text {
+    /* Desktop / Button */
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+
+    align-items: center;
+    text-align: center;
+
+    /* White-100 */
+    color: #ffffff;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    .button__primary {
+        width: 80%;
+        height: 7vmax;
+        align-self: flex-end;
+    }
+
+    .button__primary_text {
+        font-size: 6vmin;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    .button__primary {
+        width: 80%;
+        height: 7vmax;
+        align-self: flex-end;
+    }
+
+    .button__primary_text {
+        font-size: 5vmin;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    .button__primary {
+        width: 80%;
+        height: 7vmax;
+        align-self: flex-end;
+    }
+
+    .button__primary_text {
+        font-size: 4vmin;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    .button__primary {
+        width: 40vmin;
+        height: 5vmax;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+    .button__primary {
+        width: 40vmin;
+        height: 5vmax;
+    }
+}

@@ -1,0 +1,96 @@
+.span__primary_text {
+    display: block;
+    /* Desktop / Headline */
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 7vmin;
+
+    /* Black-100 */
+    color: #1c1c21;
+}
+
+.span__primary_header {
+    display: block;
+    /* Desktop / ?Question */
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5vmin;
+    /* or 37px */
+
+    /* Black-100 */
+    color: #1c1c21;
+    opacity: 0.5;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    .span__primary_text {
+        font-size: 9vmin;
+        text-align: center;
+    }
+
+    .span__primary_header {
+        font-size: 7vmin;
+        text-align: center;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    .span__primary_text {
+        font-size: 6vmin;
+        text-align: center;
+    }
+
+    .span__primary_header {
+        font-size: 5vmin;
+        text-align: center;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+    .span__primary_text {
+        font-size: 6vmin;
+        text-align: center;
+    }
+
+    .span__primary_header {
+        font-size: 5vmin;
+        text-align: center;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+    .span__primary_text {
+        font-size: 7vmin;
+        text-align: left;
+    }
+
+    .span__primary_header {
+        font-size: 5vmin;
+        text-align: left;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+    .span__primary_text {
+        font-size: 7vmin;
+        text-align: left;
+    }
+
+    .span__primary_header {
+        font-size: 5vmin;
+        text-align: left;
+    }
+}
