@@ -3,7 +3,7 @@ import styles from "./Answer.module.css"
 
 import { useAppDispatch, useAppSelector } from "../../../../../app/hooks"
 
-import { selectStatus, fetchCheckoutAsync } from "../../../playSlice"
+import { selectCorrectIndex, fetchCheckoutAsync } from "../../../playSlice"
 
 type AnswerProps = {
     index: number
@@ -18,6 +18,8 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
 }: AnswerProps) => {
     const dispatch = useAppDispatch()
 
+    const correctIndex = useAppSelector(selectCorrectIndex)
+
     return (
         <React.Fragment>
             <div
@@ -28,7 +30,13 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
                     <div className={styles.div__image_dash} />
                 </div>
                 <div className={styles.div__grid_layout_item_middle}>
-                    <div className={styles.div__button_frame}>
+                    <div
+                        className={
+                            correctIndex === index
+                                ? styles.div__button_frame_success
+                                : styles.div__button_frame
+                        }
+                    >
                         <div className={styles.div__grid_content_container}>
                             <div className={styles.div__grid_content_item_left}>
                                 <span className={styles.button__span_header}>

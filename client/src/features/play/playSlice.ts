@@ -7,6 +7,8 @@ import { Answer, Question } from "MyModels"
 export interface PlayState {
     finish: boolean
     status: "idle" | "loading" | "success" | "failed"
+    correct: boolean
+    correctIndex: -1 | 0 | 1 | 2 | 3
     answers: Answer[]
     question: Question
     error: any
@@ -14,6 +16,8 @@ export interface PlayState {
 
 const initialState: PlayState = {
     finish: false,
+    correct: false,
+    correctIndex: -1,
     status: "idle",
     answers: [],
     question: "",
@@ -97,7 +101,9 @@ export const playSlice = createSlice({
             .addCase(fetchCheckoutAsync.fulfilled, (state, action) => {
                 state.status = "success"
                 // Add any fetched posts to the array
-                state.finish = action.payload.correct
+                state.correct = action.payload.correct
+                state.correctIndex = action.payload.correctIndex
+                state.finish = !action.payload.correct
             })
             .addCase(fetchCheckoutAsync.rejected, (state, action) => {
                 state.status = "failed"
@@ -113,5 +119,8 @@ export const selectQuestion = (state: RootState) => state.play.question
 export const selectAnswers = (state: RootState) => state.play.answers
 export const selectFinish = (state: RootState) => state.play.finish
 export const selectStatus = (state: RootState) => state.play.status
+
+export const selectCorrect = (state: RootState) => state.play.correct
+export const selectCorrectIndex = (state: RootState) => state.play.correctIndex
 
 export default playSlice.reducer

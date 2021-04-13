@@ -39,7 +39,8 @@ export function fetchCheckout(index: number) {
             () =>
                 resolve({
                     data: {
-                        correct: index === 1
+                        correct: index === 0,
+                        correctIndex: 0
                     }
                 }),
             500
