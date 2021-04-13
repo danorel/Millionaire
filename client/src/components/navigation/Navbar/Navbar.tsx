@@ -4,13 +4,11 @@ import styles from "./Navbar.module.css"
 type NavbarProps = {
     open?: boolean
     onClick: (evt: React.MouseEvent<HTMLInputElement, MouseEvent>) => void
-    children: React.ReactNode
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
     open = true,
-    onClick,
-    children
+    onClick
 }: NavbarProps) => (
     <React.Fragment>
         <label className={styles.container}>
@@ -25,6 +23,5 @@ export const Navbar: React.FC<NavbarProps> = ({
                 />
             </span>
         </label>
-        {children}
     </React.Fragment>
 )

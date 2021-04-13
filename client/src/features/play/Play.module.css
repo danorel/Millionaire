@@ -27,3 +27,58 @@
     justify-content: space-around;
     align-items: center;
 }
+
+/*
+ * Wrapper of Play Component.
+ * Meant for navbar and child component manipulations.
+ */
+
+.div__grid__magic {
+    width: 100%;
+    display: grid;
+}
+
+@media screen and (min-width: 320px) {
+    .div__grid__magic {
+        grid-template-rows: 10% auto;
+        grid-template-columns: auto;
+    }
+
+    .div__grid_magic_up {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: auto;
+    }
+
+    .div__grid_magic_down {
+        display: flex;
+        align-items: center;
+        grid-row-start: 2;
+        grid-row-end: auto;
+        grid-column-start: 1;
+        grid-column-end: auto;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .div__grid__magic {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+    }
+
+    .div__grid_magic_up {
+        display: none;
+    }
+
+    .div__grid_magic_down {
+        grid-row-start: 1;
+        grid-row-end: auto;
+        grid-column-start: 1;
+        grid-column-end: auto;
+    }
+}

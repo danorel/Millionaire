@@ -22,27 +22,32 @@ export const PlayComponent: React.FC<PlayProps> = () => {
     return (
         <React.Fragment>
             <div className={styles.div__container}>
-                <Navbar open={open} onClick={onClick}>
-                    <GridBoxContainer>
-                        <GridBoxItemScreen>
-                            {open ? (
-                                <div className={styles.div__flex_screen}>
-                                    <QuestionComponent
-                                        text={
-                                            "How old your elder brother was 10 years before you was born, mate?"
-                                        }
-                                    />
-                                    <AnswersComponent />
-                                </div>
-                            ) : (
+                <div className={styles.div__grid__magic}>
+                    <div className={styles.div__grid_magic_up}>
+                        <Navbar open={open} onClick={onClick} />
+                    </div>
+                    <div className={styles.div__grid_magic_down}>
+                        <GridBoxContainer>
+                            <GridBoxItemScreen>
+                                {open ? (
+                                    <div className={styles.div__flex_screen}>
+                                        <QuestionComponent
+                                            text={
+                                                "How old your elder brother was 10 years before you was born, mate?"
+                                            }
+                                        />
+                                        <AnswersComponent />
+                                    </div>
+                                ) : (
+                                    <LevelsComponent />
+                                )}
+                            </GridBoxItemScreen>
+                            <GridBoxItemLevels>
                                 <LevelsComponent />
-                            )}
-                        </GridBoxItemScreen>
-                        <GridBoxItemLevels>
-                            <LevelsComponent />
-                        </GridBoxItemLevels>
-                    </GridBoxContainer>
-                </Navbar>
+                            </GridBoxItemLevels>
+                        </GridBoxContainer>
+                    </div>
+                </div>
             </div>
         </React.Fragment>
     )
