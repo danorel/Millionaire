@@ -1,5 +1,5 @@
 import React from "react"
-import src__SVG_Dash from "../../../../../assets/dash.svg"
+import src__SVG_Dash from "../../../../../assets/dashes/dash.svg"
 import styles from "./Answer.module.css"
 
 type AnswerProps = {

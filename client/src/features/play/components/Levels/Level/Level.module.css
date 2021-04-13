@@ -1,10 +1,11 @@
 .div__button_frame {
-    background: #ffffff url("../../../../../assets/button.svg") no-repeat center;
+    background: #ffffff url("../../../../../assets/buttons/button.svg")
+        no-repeat center;
 }
 
 .div__button_frame_active {
-    background: #ffffff url("../../../../../assets/button_active.svg") no-repeat
-        center;
+    background: #ffffff url("../../../../../assets/buttons/button_active.svg")
+        no-repeat center;
 }
 
 .div__button_frame,
@@ -18,12 +19,12 @@
 }
 
 .div__image_dash {
-    background: rgb(0, 0, 0) url("../../../../../assets/dash.svg") no-repeat
-        center;
+    background: rgb(0, 0, 0) url("../../../../../assets/dashes/dash.svg")
+        no-repeat center;
 }
 
 .div__image_dash_active {
-    background: rgb(0, 0, 0) url("../../../../../assets/dash_active.svg")
+    background: rgb(0, 0, 0) url("../../../../../assets/dashes/dash_active.svg")
         no-repeat center;
 }
 
@@ -35,6 +36,20 @@
 }
 
 .button__span_content {
+    color: #1c1c21;
+}
+
+.button__span_content_active {
+    color: #ff8b37;
+}
+
+.button__span_content_complete {
+    color: #d0d0d8;
+}
+
+.button__span_content,
+.button__span_content_active,
+.button__span_content_complete {
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -43,9 +58,6 @@
     display: flex;
     align-items: center;
     margin: auto;
-
-    /* Black-100 */
-    color: #1c1c21;
 }
 
 /**

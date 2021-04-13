@@ -4,11 +4,13 @@ import styles from "./Level.module.css"
 type LevelProps = {
     text: string
     active?: boolean
+    complete?: boolean
 }
 
 export const LevelComponent: React.FC<LevelProps> = ({
     text,
-    active = false
+    active = false,
+    complete = false
 }: LevelProps) => (
     <React.Fragment>
         <div className={styles.div__grid_layout_container}>
@@ -31,7 +33,15 @@ export const LevelComponent: React.FC<LevelProps> = ({
                 >
                     <div className={styles.div__grid_content_container}>
                         <div className={styles.div__grid_content_item}>
-                            <span className={styles.button__span_content}>
+                            <span
+                                className={
+                                    complete
+                                        ? styles.button__span_content_complete
+                                        : active
+                                        ? styles.button__span_content_active
+                                        : styles.button__span_content
+                                }
+                            >
                                 {text}
                             </span>
                         </div>
