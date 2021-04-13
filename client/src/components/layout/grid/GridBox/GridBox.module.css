@@ -1,20 +1,50 @@
-.grid__box_layout {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 73% auto;
-    grid-template-rows: 100%;
+/* Custom, iPhone Retina */
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+@media only screen and (min-width: 320px) {
+    .grid__box_layout {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+    }
+
+    .grid__box_screen {
+        grid-column-start: 1;
+        grid-column-end: auto;
+        grid-row-start: 1;
+        grid-row-end: auto;
+    }
+
+    .grid__box_levels {
+        grid-column-start: unset;
+        grid-column-end: unset;
+        grid-row-start: unset;
+        grid-row-end: unset;
+    }
 }
 
-.grid__box_screen {
-    grid-column-start: 1;
-    grid-column-end: auto;
-    grid-row-start: 1;
-    grid-row-end: auto;
-}
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 768px) {
+    .grid__box_layout {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 73% auto;
+        grid-template-rows: auto;
+    }
 
-.grid__box_levels {
-    grid-column-start: 2;
-    grid-column-end: auto;
-    grid-row-start: 1;
-    grid-row-end: auto;
+    .grid__box_screen {
+        grid-column-start: 1;
+        grid-column-end: auto;
+        grid-row-start: 1;
+        grid-row-end: auto;
+    }
+
+    .grid__box_levels {
+        grid-column-start: 2;
+        grid-column-end: auto;
+        grid-row-start: 1;
+        grid-row-end: auto;
+    }
 }
