@@ -1,7 +1,7 @@
 .grid__box_layout {
     width: 100%;
     display: grid;
-    grid-template-columns: 75% auto;
+    grid-template-columns: 73% auto;
     grid-template-rows: 100%;
 }
 
