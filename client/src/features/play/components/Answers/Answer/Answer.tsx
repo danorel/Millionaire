@@ -1,9 +1,16 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styles from "./Answer.module.css"
 
 import { useAppDispatch, useAppSelector } from "../../../../../app/hooks"
 
-import { selectCorrectIndex, fetchCheckoutAsync } from "../../../playSlice"
+import {
+    selectStatus,
+    selectCorrectIndex,
+    fetchActionAsync
+} from "../../../reducers/actionSlice"
+
+import { Dash } from "./Dash/Dash"
+import { Button } from "./Button/Button"
 
 type AnswerProps = {
     index: number
@@ -18,43 +25,27 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
 }: AnswerProps) => {
     const dispatch = useAppDispatch()
 
+    const status = useAppSelector(selectStatus)
     const correctIndex = useAppSelector(selectCorrectIndex)
 
     return (
         <React.Fragment>
             <div
-                onClick={() => dispatch(fetchCheckoutAsync(index))}
+                onClick={() => dispatch(fetchActionAsync(index))}
                 className={styles.div__grid_layout_container}
             >
                 <div className={styles.div__grid_layout_item_left}>
-                    <div className={styles.div__image_dash} />
+                    <Dash />
                 </div>
                 <div className={styles.div__grid_layout_item_middle}>
-                    <div
-                        className={
-                            correctIndex === index
-                                ? styles.div__button_frame_success
-                                : styles.div__button_frame
-                        }
-                    >
-                        <div className={styles.div__grid_content_container}>
-                            <div className={styles.div__grid_content_item_left}>
-                                <span className={styles.button__span_header}>
-                                    {letter}
-                                </span>
-                            </div>
-                            <div
-                                className={styles.div__grid_content_item_right}
-                            >
-                                <span className={styles.button__span_content}>
-                                    {text}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                    <Button
+                        text={text}
+                        letter={letter}
+                        success={correctIndex === index}
+                    />
                 </div>
                 <div className={styles.div__grid_layout_item_right}>
-                    <div className={styles.div__image_dash} />
+                    <Dash />
                 </div>
             </div>
         </React.Fragment>

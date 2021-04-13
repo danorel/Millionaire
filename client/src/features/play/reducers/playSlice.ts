@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { RootState, AppThunk } from "../../app/store"
-import { fetchAnswers, fetchQuestion, fetchCheckout } from "./playAPI"
+import { RootState, AppThunk } from "../../../app/store"
+import { fetchAnswers, fetchQuestion } from "../api/playAPI"
 
 import { Answer, Question } from "MyModels"
 
@@ -47,15 +47,6 @@ export const fetchQuestionAsync = createAsyncThunk(
     }
 )
 
-export const fetchCheckoutAsync = createAsyncThunk(
-    "play/fetchCheckout",
-    async (index: number) => {
-        const response = await fetchCheckout(index)
-        // The value we return becomes the `fulfilled` action payload
-        return response.data
-    }
-)
-
 export const playSlice = createSlice({
     name: "play",
     initialState,
@@ -92,23 +83,6 @@ export const playSlice = createSlice({
                 state.status = "failed"
                 state.error = action.error.message
             })
-            /*
-             * Fetch Question case.
-             */
-            .addCase(fetchCheckoutAsync.pending, (state, action) => {
-                state.status = "loading"
-            })
-            .addCase(fetchCheckoutAsync.fulfilled, (state, action) => {
-                state.status = "success"
-                // Add any fetched posts to the array
-                state.correct = action.payload.correct
-                state.correctIndex = action.payload.correctIndex
-                state.finish = !action.payload.correct
-            })
-            .addCase(fetchCheckoutAsync.rejected, (state, action) => {
-                state.status = "failed"
-                state.error = action.error.message
-            })
     }
 })
 
@@ -119,8 +93,5 @@ export const selectQuestion = (state: RootState) => state.play.question
 export const selectAnswers = (state: RootState) => state.play.answers
 export const selectFinish = (state: RootState) => state.play.finish
 export const selectStatus = (state: RootState) => state.play.status
-
-export const selectCorrect = (state: RootState) => state.play.correct
-export const selectCorrectIndex = (state: RootState) => state.play.correctIndex
 
 export default playSlice.reducer

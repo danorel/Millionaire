@@ -11,7 +11,7 @@ import {
     selectFinish,
     selectAnswers,
     selectQuestion
-} from "./playSlice"
+} from "./reducers/playSlice"
 
 import {
     GridBoxItemScreen,
