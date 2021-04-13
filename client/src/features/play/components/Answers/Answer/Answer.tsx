@@ -1,5 +1,4 @@
 import React from "react"
-import src__SVG_Dash from "../../../../../assets/dashes/dash.svg"
 import styles from "./Answer.module.css"
 
 type AnswerProps = {
@@ -14,7 +13,7 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
     <React.Fragment>
         <div className={styles.div__grid_layout_container}>
             <div className={styles.div__grid_layout_item_left}>
-                <img alt={"Dash"} src={src__SVG_Dash} />
+                <div className={styles.div__image_dash} />
             </div>
             <div className={styles.div__grid_layout_item_middle}>
                 <div className={styles.div__button_frame}>
@@ -33,7 +32,7 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
                 </div>
             </div>
             <div className={styles.div__grid_layout_item_right}>
-                <img alt={"Dash"} src={src__SVG_Dash} />
+                <div className={styles.div__image_dash} />
             </div>
         </div>
     </React.Fragment>
