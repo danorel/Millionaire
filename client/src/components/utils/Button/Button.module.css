@@ -9,6 +9,14 @@
     border-radius: 12px;
 }
 
+.button__primary:hover {
+    background: #ffac70;
+}
+
+.button__primary:active {
+    background: #e87928;
+}
+
 .button__primary_text {
     /* Desktop / Button */
     font-family: Inter, sans-serif;

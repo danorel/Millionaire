@@ -8,7 +8,6 @@ import {
     fetchAnswersAsync,
     fetchQuestionAsync,
     selectStatus,
-    selectFinish,
     selectAnswers,
     selectQuestion
 } from "./reducers/playSlice"
@@ -29,7 +28,6 @@ export const PlayComponent: React.FC<PlayProps> = () => {
     const [open, setOpen] = useState(true)
 
     const status = useAppSelector(selectStatus)
-    const finish = useAppSelector(selectFinish)
     const answers = useAppSelector(selectAnswers)
     const question = useAppSelector(selectQuestion)
 
@@ -44,8 +42,6 @@ export const PlayComponent: React.FC<PlayProps> = () => {
 
     const onClickOpen = (evt: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
         setOpen(evt.currentTarget.checked)
-
-    if (finish) return <Redirect to={"/summary"} />
 
     return (
         <React.Fragment>
