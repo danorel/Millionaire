@@ -7,13 +7,21 @@ type ButtonProps = {
     text: string
     letter: string
     success: boolean
+    loading: boolean
 }
 
-export const Button: React.FC<ButtonProps> = ({ text, letter, success }) => (
+export const Button: React.FC<ButtonProps> = ({
+    text,
+    letter,
+    success,
+    loading
+}) => (
     <React.Fragment>
         <div
             className={
-                success
+                loading
+                    ? stylesButton.div__button_frame_loading
+                    : success
                     ? stylesButton.div__button_frame_success
                     : stylesButton.div__button_frame
             }

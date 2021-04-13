@@ -15,23 +15,33 @@
         no-repeat center center;
 }
 
+.div__button_frame_fail,
 .div__button_frame_success {
     animation: blinking 2s linear;
+}
+
+.div__button_frame_success {
     background: #f5f5f7
         url("../../../../../../../assets/buttons/button_success.svg") no-repeat
         center center;
 }
 
+.div__button_frame_loading {
+    background: #f5f5f7
+        url("../../../../../../../assets/buttons/button_loading.svg") no-repeat
+        center center;
+}
+
 .div__button_frame_fail {
-    animation: blinking 2s linear;
     background: #f5f5f7
         url("../../../../../../../assets/buttons/button_fail.svg") no-repeat
         center center;
 }
 
 .div__button_frame,
+.div__button_frame_fail,
 .div__button_frame_success,
-.div__button_frame_fail {
+.div__button_frame_loading {
     width: 100%;
     /*
      * Background properties.
@@ -51,22 +61,27 @@
     }
 
     .div__button_frame_fail {
-        animation: blinking 2s linear;
         background: #f5f5f7
             url("../../../../../../../assets/buttons/button_fail.svg") no-repeat
             center center;
     }
 
     .div__button_frame_success {
-        animation: blinking 2s linear;
         background: #f5f5f7
             url("../../../../../../../assets/buttons/button_success.svg")
             no-repeat center center;
     }
 
+    .div__button_frame_loading {
+        background: #f5f5f7
+            url("../../../../../../../assets/buttons/button_loading.svg")
+            no-repeat center center;
+    }
+
     .div__button_frame,
+    .div__button_frame_fail,
     .div__button_frame_success,
-    .div__button_frame_fail {
+    .div__button_frame_loading {
         height: 20vmin;
         background-size: 100% auto;
     }
@@ -77,8 +92,9 @@
  */
 @media only screen and (min-width: 480px) {
     .div__button_frame,
+    .div__button_frame_fail,
     .div__button_frame_success,
-    .div__button_frame_fail {
+    .div__button_frame_loading {
         height: 10vmin;
         margin-top: 7px;
     }
@@ -89,8 +105,9 @@
  */
 @media only screen and (min-width: 768px) {
     .div__button_frame,
+    .div__button_frame_fail,
     .div__button_frame_success,
-    .div__button_frame_fail {
+    .div__button_frame_loading {
         height: 15vmin;
     }
 }
@@ -98,8 +115,9 @@
 /* iPad, Portrait and Landscape */
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     .div__button_frame,
+    .div__button_frame_fail,
     .div__button_frame_success,
-    .div__button_frame_fail {
+    .div__button_frame_loading {
         height: 15vmin;
     }
 }
@@ -107,8 +125,9 @@
 /* iPad Pro, Portrait and Landscape */
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
     .div__button_frame,
+    .div__button_frame_fail,
     .div__button_frame_success,
-    .div__button_frame_fail {
+    .div__button_frame_loading {
         height: 15vmin;
     }
 }
@@ -119,8 +138,9 @@
  */
 @media only screen and (min-width: 992px) {
     .div__button_frame,
+    .div__button_frame_fail,
     .div__button_frame_success,
-    .div__button_frame_fail {
+    .div__button_frame_loading {
         height: 11vmin;
     }
 }

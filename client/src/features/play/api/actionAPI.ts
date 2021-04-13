@@ -8,10 +8,10 @@ export function fetchAction(index: number) {
                 resolve({
                     data: {
                         correct: index === 0,
-                        correctIndex: 0
+                        indexCorrect: 0
                     }
                 }),
-            500
+            2000
         )
     )
 }

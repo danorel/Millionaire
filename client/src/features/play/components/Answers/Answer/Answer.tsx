@@ -4,16 +4,19 @@ import styles from "./Answer.module.css"
 import { useAppDispatch, useAppSelector } from "../../../../../app/hooks"
 
 import {
-    selectStatus,
-    selectCorrectIndex,
-    fetchActionAsync
+    selectIndexLoading,
+    selectIndexCorrect,
+    fetchActionAsync,
+    setLoadingIndex
 } from "../../../reducers/actionSlice"
+
+import { ButtonIndex } from "MyModels"
 
 import { Dash } from "./Dash/Dash"
 import { Button } from "./Button/Button"
 
 type AnswerProps = {
-    index: number
+    index: ButtonIndex
     text: string
     letter: string
 }
@@ -25,13 +28,16 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
 }: AnswerProps) => {
     const dispatch = useAppDispatch()
 
-    const status = useAppSelector(selectStatus)
-    const correctIndex = useAppSelector(selectCorrectIndex)
+    const indexCorrect = useAppSelector(selectIndexCorrect)
+    const indexLoading = useAppSelector(selectIndexLoading)
 
     return (
         <React.Fragment>
             <div
-                onClick={() => dispatch(fetchActionAsync(index))}
+                onClick={() => {
+                    dispatch(setLoadingIndex(index))
+                    dispatch(fetchActionAsync(index))
+                }}
                 className={styles.div__grid_layout_container}
             >
                 <div className={styles.div__grid_layout_item_left}>
@@ -41,7 +47,8 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
                     <Button
                         text={text}
                         letter={letter}
-                        success={correctIndex === index}
+                        loading={indexLoading === index}
+                        success={indexCorrect === index}
                     />
                 </div>
                 <div className={styles.div__grid_layout_item_right}>
