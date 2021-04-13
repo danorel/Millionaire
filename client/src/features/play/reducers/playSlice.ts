@@ -5,17 +5,17 @@ import { fetchAnswers, fetchQuestion } from "../api/playAPI"
 import { Answer, Question } from "MyModels"
 
 export interface PlayState {
-    status: "idle" | "loading" | "success" | "failed"
     answers: Answer[]
     question: Question
     error: any
+    status: "idle" | "loading" | "success" | "failed"
 }
 
 const initialState: PlayState = {
-    status: "idle",
     answers: [],
     question: "",
-    error: null
+    error: null,
+    status: "idle"
 }
 
 // The function below is called a thunk and allows us to perform async logic. It

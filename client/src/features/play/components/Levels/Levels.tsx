@@ -3,25 +3,39 @@ import styles from "./Levels.module.css"
 
 import { LevelComponent } from "./Level/Level"
 
-type LevelProps = {}
+type LevelProps = {
+    step: number
+}
 
-export const LevelsComponent: React.FC<LevelProps> = (props: LevelProps) => (
+const LevelsArrayValues = [
+    "$1,000,000",
+    "$500,000",
+    "$250,000",
+    "$125,000",
+    "$64,000",
+    "$32,000",
+    "$16,000",
+    "$8,000",
+    "$4,000",
+    "$2,000",
+    "$1,000",
+    "$500"
+]
+
+const length = LevelsArrayValues.length - 1
+
+export const LevelsComponent: React.FC<LevelProps> = ({ step }: LevelProps) => (
     <React.Fragment>
         <div className={styles.div__container}>
             <div className={styles.grid__container}>
                 <div className={styles.grid__item}>
-                    <LevelComponent text={"$1,000,000"} />
-                    <LevelComponent text={"$500,000"} />
-                    <LevelComponent text={"$250,000"} />
-                    <LevelComponent text={"$125,000"} />
-                    <LevelComponent text={"$64,000"} />
-                    <LevelComponent text={"$32,000"} />
-                    <LevelComponent text={"$16,000"} />
-                    <LevelComponent active text={"$8,000"} />
-                    <LevelComponent complete text={"$4,000"} />
-                    <LevelComponent complete text={"$2,000"} />
-                    <LevelComponent complete text={"$1,000"} />
-                    <LevelComponent complete text={"$500"} />
+                    {LevelsArrayValues.map((value, index) => (
+                        <LevelComponent
+                            complete={length - index < step}
+                            active={length - index === step}
+                            text={value}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

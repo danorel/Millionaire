@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Redirect } from "react-router-dom"
 import styles from "./Play.module.css"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
@@ -11,6 +10,8 @@ import {
     selectAnswers,
     selectQuestion
 } from "./reducers/playSlice"
+
+import { selectStep } from "./reducers/actionSlice"
 
 import {
     GridBoxItemScreen,
@@ -26,6 +27,8 @@ type PlayProps = {}
 
 export const PlayComponent: React.FC<PlayProps> = () => {
     const [open, setOpen] = useState(true)
+
+    const step = useAppSelector(selectStep)
 
     const status = useAppSelector(selectStatus)
     const answers = useAppSelector(selectAnswers)
@@ -59,11 +62,11 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                                         <AnswersComponent values={answers} />
                                     </div>
                                 ) : (
-                                    <LevelsComponent />
+                                    <LevelsComponent step={step} />
                                 )}
                             </GridBoxItemScreen>
                             <GridBoxItemLevels>
-                                <LevelsComponent />
+                                <LevelsComponent step={step} />
                             </GridBoxItemLevels>
                         </GridBoxContainer>
                     </div>

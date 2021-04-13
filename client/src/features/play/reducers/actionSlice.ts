@@ -5,9 +5,10 @@ import { fetchAction } from "../api/actionAPI"
 import { ButtonIndex } from "MyModels"
 
 export interface ActionState {
+    step: number
     finish: boolean
     status: "idle" | "loading" | "success" | "failed"
-    correct: boolean
+    success: boolean
     indexFail: -1 | ButtonIndex
     indexLoading: -1 | ButtonIndex
     indexCorrect: -1 | ButtonIndex
@@ -15,8 +16,9 @@ export interface ActionState {
 }
 
 const initialState: ActionState = {
+    step: 0,
     finish: false,
-    correct: false,
+    success: false,
     indexFail: -1,
     indexCorrect: -1,
     indexLoading: -1,
@@ -42,7 +44,16 @@ export const actionSlice = createSlice({
     name: "action",
     initialState,
     reducers: {
+        setDefaultIndex: (state) => {
+            state.indexFail = -1
+            state.indexCorrect = -1
+            state.indexLoading = -1
+        },
+        setIncrementStep: (state) => {
+            state.step = state.step + 1
+        },
         setLoadingIndex: (state, action: PayloadAction<ButtonIndex>) => {
+            state.success = false
             state.indexFail = -1
             state.indexCorrect = -1
             state.indexLoading = action.payload
@@ -56,13 +67,13 @@ export const actionSlice = createSlice({
             .addCase(fetchActionAsync.fulfilled, (state, action) => {
                 state.status = "success"
                 // Add any fetched posts to the array
-                state.correct = action.payload.correct
-                state.indexFail = !action.payload.correct
+                state.success = action.payload.success
+                state.indexFail = !action.payload.success
                     ? state.indexLoading
                     : -1
                 state.indexLoading = -1
                 state.indexCorrect = action.payload.indexCorrect
-                state.finish = !action.payload.correct
+                state.finish = !action.payload.success
             })
             .addCase(fetchActionAsync.rejected, (state, action) => {
                 state.status = "failed"
@@ -72,15 +83,21 @@ export const actionSlice = createSlice({
     }
 })
 
-export const { setLoadingIndex } = actionSlice.actions
+export const {
+    setDefaultIndex,
+    setIncrementStep,
+    setLoadingIndex
+} = actionSlice.actions
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.action.finish)`
+export const selectStep = (state: RootState) => state.action.step
+
 export const selectFinish = (state: RootState) => state.action.finish
 export const selectStatus = (state: RootState) => state.action.status
 
-export const selectCorrect = (state: RootState) => state.action.correct
+export const selectSuccess = (state: RootState) => state.action.success
 export const selectIndexFail = (state: RootState) => state.action.indexFail
 export const selectIndexCorrect = (state: RootState) =>
     state.action.indexCorrect
