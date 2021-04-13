@@ -27,7 +27,7 @@
 @media only screen and (min-width: 480px) {
     .div__button_frame {
         height: 10vmin;
-        margin-top: 5px;
+        margin-top: 7px;
     }
 }
 
@@ -73,6 +73,15 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+}
+
+/*
+ * Extra Small Devices, Phones
+ */
+@media only screen and (min-width: 480px) {
+    .div__image_dash {
+        margin-top: 7px;
+    }
 }
 
 .button__span_header {
@@ -213,7 +222,7 @@
  */
 @media only screen and (min-width: 480px) {
     .div__grid_layout_container {
-        grid-template-columns: 12% auto 12%;
+        grid-template-columns: 5% auto 5%;
     }
 }
 
