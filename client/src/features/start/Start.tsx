@@ -1,5 +1,5 @@
 import React from "react"
-import src__SVG_StartHand from "../../assets/start_hand.svg"
+import src__SVG_StartHand from "../../assets/containers/start_hand.svg"
 
 import {
     FlexRow,

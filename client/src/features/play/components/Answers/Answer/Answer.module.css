@@ -11,7 +11,6 @@
 
 /*
  * Custom, iPhone Retina
- * Extra Small Devices, Phones
  */
 @media only screen and (min-width: 320px) {
     .div__button_frame {
@@ -23,11 +22,35 @@
 }
 
 /*
+ * Extra Small Devices, Phones
+ */
+@media only screen and (min-width: 480px) {
+    .div__button_frame {
+        height: 10vmin;
+        margin-top: 7px;
+    }
+}
+
+/*
  * Medium Devices, Desktops
  */
 @media only screen and (min-width: 768px) {
     .div__button_frame {
-        height: 12vmin;
+        height: 15vmin;
+    }
+}
+
+/* iPad, Portrait and Landscape */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .div__button_frame {
+        height: 15vmin;
+    }
+}
+
+/* iPad Pro, Portrait and Landscape */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .div__button_frame {
+        height: 15vmin;
     }
 }
 
@@ -37,7 +60,7 @@
  */
 @media only screen and (min-width: 992px) {
     .div__button_frame {
-        height: 9.8vmin;
+        height: 11vmin;
     }
 }
 
@@ -50,6 +73,15 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+}
+
+/*
+ * Extra Small Devices, Phones
+ */
+@media only screen and (min-width: 480px) {
+    .div__image_dash {
+        margin-top: 7px;
+    }
 }
 
 .button__span_header {
@@ -80,36 +112,49 @@
     color: #1c1c21;
 }
 
-/* iPad, Portrait and Landscape */
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+/*
+ * Extra Small Devices, Phones
+ */
+@media only screen and (min-width: 480px) {
     .button__span_header {
-        font-size: 3vmin;
+        font-size: 3.3vmin;
     }
 
     .button__span_content {
-        font-size: 3vmin;
-    }
-}
-
-/* iPad Pro, Portrait and Landscape */
-@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-    .button__span_header {
-        font-size: 3vmin;
-    }
-
-    .button__span_content {
-        font-size: 3vmin;
+        font-size: 3.3vmin;
     }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 768px) {
     .button__span_header {
-        font-size: 3.2vmin;
+        font-size: 2.8vmin;
     }
 
     .button__span_content {
-        font-size: 3.2vmin;
+        font-size: 2.8vmin;
+    }
+}
+
+/* iPad, Portrait and Landscape */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .button__span_header {
+        font-size: 2.7vmin;
+    }
+
+    .button__span_content {
+        font-size: 2.7vmin;
+    }
+}
+
+/* iPad Pro, Portrait and Landscape */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .button__span_header {
+        font-size: 2.5vmin;
+    }
+
+    .button__span_content {
+        font-size: 2.5vmin;
     }
 }
 
@@ -164,12 +209,20 @@
 
 /*
  * Custom, iPhone Retina
- * Extra Small Devices, Phones
- * Small Devices, Tablets
  */
 @media only screen and (min-width: 320px) {
     .div__grid_layout_container {
         grid-template-columns: 7.5% auto 7.5%;
+    }
+}
+
+/*
+ * Custom, iPhone Retina
+ * Extra Small Devices, Phones
+ */
+@media only screen and (min-width: 480px) {
+    .div__grid_layout_container {
+        grid-template-columns: 5% auto 5%;
     }
 }
 
@@ -227,10 +280,36 @@
 /*
  * Medium Devices, Desktops
  */
+@media only screen and (min-width: 480px) {
+    .div__grid_content_container {
+        height: 10vmin;
+        grid-template-columns: 10% 7.5% 75% auto;
+    }
+}
+
+/*
+ * Medium Devices, Desktops
+ */
 @media only screen and (min-width: 768px) {
     .div__grid_content_container {
-        height: 12vmin;
+        height: 15vmin;
         grid-template-columns: 12% 10% 75% auto;
+    }
+}
+
+/* iPad, Portrait and Landscape */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .div__grid_content_container {
+        height: 15vmin;
+        grid-template-columns: 12% 13% 75% auto;
+    }
+}
+
+/* iPad Pro, Portrait and Landscape */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .div__grid_content_container {
+        height: 15vmin;
+        grid-template-columns: 12% 13% 75% auto;
     }
 }
 
@@ -240,6 +319,6 @@
  */
 @media only screen and (min-width: 992px) {
     .div__grid_content_container {
-        height: 9.8vmin;
+        height: 11vmin;
     }
 }

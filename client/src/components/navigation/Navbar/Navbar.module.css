@@ -1,0 +1,53 @@
+.toggle__container {
+}
+
+label input {
+    display: none;
+}
+
+.toggle_button_open {
+    background: #f5f5f7 url("../../../assets/navbars/hamburger_open.svg")
+        no-repeat center center;
+}
+
+.toggle__button_close {
+    background: #f5f5f7 url("../../../assets/navbars/hamburger_close.svg")
+        no-repeat center center;
+}
+
+.toggle_button_open,
+.toggle__button_close {
+    /*position: absolute;*/
+    left: 0;
+    bottom: 0;
+    width: 4vh;
+    height: 4vh;
+    display: block;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+    .container {
+        position: absolute;
+        padding: 7vmin 7vmin 0 0;
+        right: 0;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+    .container {
+        position: absolute;
+        padding: 5.5vmin 5.5vmin 0 0;
+        right: 0;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 760px) {
+    .container {
+        display: none;
+    }
+}
