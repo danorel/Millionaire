@@ -8,6 +8,7 @@ export interface ActionState {
     finish: boolean
     status: "idle" | "loading" | "success" | "failed"
     correct: boolean
+    indexFail: -1 | ButtonIndex
     indexLoading: -1 | ButtonIndex
     indexCorrect: -1 | ButtonIndex
     error: any
@@ -16,6 +17,7 @@ export interface ActionState {
 const initialState: ActionState = {
     finish: false,
     correct: false,
+    indexFail: -1,
     indexCorrect: -1,
     indexLoading: -1,
     status: "idle",
@@ -41,6 +43,8 @@ export const actionSlice = createSlice({
     initialState,
     reducers: {
         setLoadingIndex: (state, action: PayloadAction<ButtonIndex>) => {
+            state.indexFail = -1
+            state.indexCorrect = -1
             state.indexLoading = action.payload
         }
     },
@@ -53,6 +57,9 @@ export const actionSlice = createSlice({
                 state.status = "success"
                 // Add any fetched posts to the array
                 state.correct = action.payload.correct
+                state.indexFail = !action.payload.correct
+                    ? state.indexLoading
+                    : -1
                 state.indexLoading = -1
                 state.indexCorrect = action.payload.indexCorrect
                 state.finish = !action.payload.correct
@@ -74,6 +81,7 @@ export const selectFinish = (state: RootState) => state.action.finish
 export const selectStatus = (state: RootState) => state.action.status
 
 export const selectCorrect = (state: RootState) => state.action.correct
+export const selectIndexFail = (state: RootState) => state.action.indexFail
 export const selectIndexCorrect = (state: RootState) =>
     state.action.indexCorrect
 export const selectIndexLoading = (state: RootState) =>
