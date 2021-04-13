@@ -35,6 +35,10 @@
     }
 
     .grid__item_left {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
         grid-column-start: 2;
         grid-column-end: 3;
         grid-row-start: 1;
@@ -42,6 +46,10 @@
     }
 
     .grid__item_right {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
         grid-column-start: 3;
         grid-column-end: 4;
         grid-row-start: 1;

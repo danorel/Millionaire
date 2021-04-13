@@ -25,14 +25,18 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                 <Navbar open={open} onClick={onClick}>
                     <GridBoxContainer>
                         <GridBoxItemScreen>
-                            <div className={styles.div__flex_screen}>
-                                <QuestionComponent
-                                    text={
-                                        "How old your elder brother was 10 years before you was born, mate?"
-                                    }
-                                />
-                                <AnswersComponent />
-                            </div>
+                            {open ? (
+                                <div className={styles.div__flex_screen}>
+                                    <QuestionComponent
+                                        text={
+                                            "How old your elder brother was 10 years before you was born, mate?"
+                                        }
+                                    />
+                                    <AnswersComponent />
+                                </div>
+                            ) : (
+                                <LevelsComponent />
+                            )}
                         </GridBoxItemScreen>
                         <GridBoxItemLevels>
                             <LevelsComponent />
