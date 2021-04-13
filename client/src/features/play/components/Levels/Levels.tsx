@@ -10,7 +10,7 @@ export const LevelsComponent: React.FC<LevelProps> = (props: LevelProps) => (
         <div className={styles.div__container}>
             <div className={styles.grid__container}>
                 <div className={styles.grid__item}>
-                    <LevelComponent text={"$1,000,000"} />
+                    <LevelComponent active text={"$1,000,000"} />
                     <LevelComponent text={"$500,000"} />
                     <LevelComponent text={"$250,000"} />
                     <LevelComponent text={"$125,000"} />

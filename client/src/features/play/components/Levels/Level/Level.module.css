@@ -1,18 +1,36 @@
 .div__button_frame {
+    background: #ffffff url("../../../../../assets/button.svg") no-repeat center;
+}
+
+.div__button_frame_active {
+    background: #ffffff url("../../../../../assets/button_active.svg") no-repeat
+        center;
+}
+
+.div__button_frame,
+.div__button_frame_active {
     width: 100%;
     /*
      * Background properties.
      * Working with svg button, fitting it on full div.
      */
-    background: #ffffff url("../../../../../assets/button.svg") no-repeat center;
     background-size: 100% auto;
 }
 
 .div__image_dash {
-    width: 100%;
-    height: 1px;
     background: rgb(0, 0, 0) url("../../../../../assets/dash.svg") no-repeat
         center;
+}
+
+.div__image_dash_active {
+    background: rgb(0, 0, 0) url("../../../../../assets/dash_active.svg")
+        no-repeat center;
+}
+
+.div__image_dash,
+.div__image_dash_active {
+    width: 100%;
+    height: 1px;
     background-size: 100% auto;
 }
 
