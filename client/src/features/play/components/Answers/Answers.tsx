@@ -3,6 +3,8 @@ import styles from "./Answers.module.css"
 
 import { AnswerComponent } from "./Answer/Answer"
 
+import { ButtonIndex } from "MyModels"
+
 type Answer = {
     text: string
 }
@@ -25,7 +27,7 @@ export const AnswersComponent: React.FC<AnswersProps> = ({
                     .map((answer) => answer.text)
                     .map((value, index) => (
                         <AnswerComponent
-                            index={index}
+                            index={index as ButtonIndex}
                             letter={LettersLeft[index]}
                             text={value}
                         />
@@ -37,7 +39,7 @@ export const AnswersComponent: React.FC<AnswersProps> = ({
                     .map((answer) => answer.text)
                     .map((value, index) => (
                         <AnswerComponent
-                            index={index + 2}
+                            index={(index + 2) as ButtonIndex}
                             letter={LettersRight[index]}
                             text={value}
                         />

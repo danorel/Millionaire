@@ -1,7 +1,9 @@
 declare module "MyModels" {
+    export type ButtonIndex = 0 | 1 | 2 | 3
+
     export type Option = {
         correct: boolean
-        correctIndex: 0 | 1 | 2 | 3
+        indexCorrect: ButtonIndex
     }
 
     export type Answer = {

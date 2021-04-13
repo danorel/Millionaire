@@ -6,14 +6,26 @@ import stylesContent from "./stylesheets/Content.module.css"
 type ButtonProps = {
     text: string
     letter: string
+    fail: boolean
     success: boolean
+    loading: boolean
 }
 
-export const Button: React.FC<ButtonProps> = ({ text, letter, success }) => (
+export const Button: React.FC<ButtonProps> = ({
+    text,
+    letter,
+    fail,
+    success,
+    loading
+}) => (
     <React.Fragment>
         <div
             className={
-                success
+                loading
+                    ? stylesButton.div__button_frame_loading
+                    : fail
+                    ? stylesButton.div__button_frame_fail
+                    : success
                     ? stylesButton.div__button_frame_success
                     : stylesButton.div__button_frame
             }

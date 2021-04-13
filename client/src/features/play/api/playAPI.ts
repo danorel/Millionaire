@@ -1,4 +1,4 @@
-import { Option, Answer, Question } from "MyModels"
+import { Answer, Question } from "MyModels"
 
 // A mock function to mimic making an async request for data
 export function fetchAnswers() {
