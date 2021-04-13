@@ -7,7 +7,7 @@ export function fetchAction(index: number) {
             () =>
                 resolve({
                     data: {
-                        correct: index === 0,
+                        success: index === 0,
                         indexCorrect: 0
                     }
                 }),
