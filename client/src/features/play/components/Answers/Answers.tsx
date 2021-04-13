@@ -3,20 +3,45 @@ import styles from "./Answers.module.css"
 
 import { AnswerComponent } from "./Answer/Answer"
 
-type AnswersProps = {}
+type Answer = {
+    text: string
+}
 
-export const AnswersComponent: React.FC<AnswersProps> = (
-    props: AnswersProps
-) => (
+type AnswersProps = {
+    values: Answer[]
+}
+
+const LettersLeft = ["A", "B"]
+const LettersRight = ["C", "D"]
+
+export const AnswersComponent: React.FC<AnswersProps> = ({
+    values
+}: AnswersProps) => (
     <React.Fragment>
         <div className={styles.grid__container}>
             <div className={styles.grid__item_left}>
-                <AnswerComponent letter={"A"} text={"10 years"} />
-                <AnswerComponent letter={"B"} text={"12 years"} />
+                {values
+                    .slice(0, 2)
+                    .map((answer) => answer.text)
+                    .map((value, index) => (
+                        <AnswerComponent
+                            index={index}
+                            letter={LettersLeft[index]}
+                            text={value}
+                        />
+                    ))}
             </div>
             <div className={styles.grid__item_right}>
-                <AnswerComponent letter={"C"} text={"11 years"} />
-                <AnswerComponent letter={"D"} text={"9 years"} />
+                {values
+                    .slice(2, values.length)
+                    .map((answer) => answer.text)
+                    .map((value, index) => (
+                        <AnswerComponent
+                            index={index + 2}
+                            letter={LettersRight[index]}
+                            text={value}
+                        />
+                    ))}
             </div>
         </div>
     </React.Fragment>
