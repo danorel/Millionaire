@@ -5,19 +5,13 @@ import { fetchAnswers, fetchQuestion } from "../api/playAPI"
 import { Answer, Question } from "MyModels"
 
 export interface PlayState {
-    finish: boolean
     status: "idle" | "loading" | "success" | "failed"
-    correct: boolean
-    correctIndex: -1 | 0 | 1 | 2 | 3
     answers: Answer[]
     question: Question
     error: any
 }
 
 const initialState: PlayState = {
-    finish: false,
-    correct: false,
-    correctIndex: -1,
     status: "idle",
     answers: [],
     question: "",
@@ -91,7 +85,6 @@ export const playSlice = createSlice({
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 export const selectQuestion = (state: RootState) => state.play.question
 export const selectAnswers = (state: RootState) => state.play.answers
-export const selectFinish = (state: RootState) => state.play.finish
 export const selectStatus = (state: RootState) => state.play.status
 
 export default playSlice.reducer
