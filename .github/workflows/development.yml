@@ -34,19 +34,18 @@ jobs:
         with:
           node_version: ${{ matrix.node_version }}
       
-      - name: run Linter
+      - name: Run Linter
         run: |
           echo Running Linter for the React Client...
-          npm install
           cd client 
           npm install
           npm run start:lint
           
-      - name: run Formatter
+      - name: Run Formatter
         run: |
           echo Running Formatter for React Client...
           cd client
-          npm install --save-dev
+          npm install
           npm run start:formatting
       
       # Running, when linting was successful.
