@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Title.module.css"
 
-import { FlexRowGroup } from "../../layout/flex"
+import { ViewFlexRowGroup } from "../../layout/flex"
 
 type TitleProps = {
     readonly text: string
@@ -14,10 +14,10 @@ export const TitleComponent: React.FC<TitleProps> = ({
 }: TitleProps) =>
     header ? (
         <React.Fragment>
-            <FlexRowGroup>
+            <ViewFlexRowGroup>
                 <span className={styles.span__primary_header}>{header}</span>
                 <span className={styles.span__primary_text}>{text}</span>
-            </FlexRowGroup>
+            </ViewFlexRowGroup>
         </React.Fragment>
     ) : (
         <React.Fragment>

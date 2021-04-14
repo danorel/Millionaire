@@ -1,4 +1,5 @@
-import { VerticalContainer } from "./VerticalContainer/VerticalContainer"
-import { Container } from "./Container/Container"
+import { VerticalContainer as LayoutVerticalContainer } from "./VerticalContainer/VerticalContainer"
 
-export { Container, VerticalContainer }
+import { Container as LayoutContainer } from "./Container/Container"
+
+export { LayoutContainer, LayoutVerticalContainer }

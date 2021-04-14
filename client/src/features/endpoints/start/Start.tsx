@@ -1,13 +1,20 @@
 import React from "react"
 import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 
-import { FlexRow, FlexColumn, FlexColumnGroup } from "../components/layout/flex"
-
-import { Container, VerticalContainer } from "../components/layout/containers"
+import {
+    ViewFlexRow,
+    ViewFlexColumn,
+    ViewFlexColumnGroup
+} from "../components/layout/flex"
 
 import {
-    ImageComponent,
+    LayoutContainer,
+    LayoutVerticalContainer
+} from "../components/layout/containers"
+
+import {
     TitleComponent,
+    ImageComponent,
     ButtonComponent
 } from "../components/utils"
 
@@ -15,17 +22,17 @@ type StartProps = {}
 
 export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
     <React.Fragment>
-        <Container background>
-            <VerticalContainer>
-                <FlexRow>
-                    <FlexColumn>
+        <LayoutContainer background>
+            <LayoutVerticalContainer>
+                <ViewFlexRow>
+                    <ViewFlexColumn>
                         <ImageComponent
                             alt={"Millionaire"}
                             src={src__SVG_StartHand}
                         />
-                    </FlexColumn>
-                    <FlexColumn>
-                        <FlexColumnGroup>
+                    </ViewFlexColumn>
+                    <ViewFlexColumn>
+                        <ViewFlexColumnGroup>
                             <TitleComponent
                                 text={"Who wants to be a millionaire?"}
                             />
@@ -33,10 +40,10 @@ export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
                                 text={"Start"}
                                 redirect={"/play"}
                             />
-                        </FlexColumnGroup>
-                    </FlexColumn>
-                </FlexRow>
-            </VerticalContainer>
-        </Container>
+                        </ViewFlexColumnGroup>
+                    </ViewFlexColumn>
+                </ViewFlexRow>
+            </LayoutVerticalContainer>
+        </LayoutContainer>
     </React.Fragment>
 )

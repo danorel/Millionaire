@@ -1,4 +1,4 @@
-.column__group {
+.div__column {
     height: 100%;
     width: 100%;
     display: flex;
@@ -8,7 +8,7 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
-    .column__group {
+    .div__column {
         flex-flow: column wrap;
         justify-content: space-around;
     }
@@ -16,7 +16,7 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-    .column__group {
+    .div__column {
         flex-flow: column wrap;
         justify-content: space-around;
     }
@@ -24,7 +24,7 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-    .column__group {
+    .div__column {
         flex-flow: column wrap;
         justify-content: space-around;
     }
@@ -32,14 +32,14 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-    .column__group {
+    .div__column {
         justify-content: space-evenly;
     }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-    .column__group {
+    .div__column {
         justify-content: space-evenly;
     }
 }
