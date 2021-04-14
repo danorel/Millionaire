@@ -1,11 +1,12 @@
 .div__image_frame {
-    background: rgb(0, 0, 0) url("../../../../../../assets/dashes/dash.svg")
+    background: rgb(0, 0, 0) url("../../../../../../../assets/dashes/dash.svg")
         no-repeat center;
 }
 
 .div__image_frame_active {
     background: rgb(0, 0, 0)
-        url("../../../../../../assets/dashes/dash_active.svg") no-repeat center;
+        url("../../../../../../../assets/dashes/dash_active.svg") no-repeat
+        center;
 }
 
 .div__image_frame,

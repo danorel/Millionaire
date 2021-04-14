@@ -3,14 +3,14 @@ import { withRouter, RouteComponentProps } from "react-router-dom"
 
 import styles from "./Layout.module.css"
 
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
+import { useAppDispatch, useAppSelector } from "../../../../../app/hooks"
 
 import {
     selectFinish,
     selectSuccess,
     setDefaultIndex,
     setIncrementStep
-} from "../../reducers/actionSlice"
+} from "../../../reducers/actionSlice"
 
 import { ButtonIndex, Answer } from "MyModels"
 
@@ -35,7 +35,7 @@ const AnswersComponentNonRouted: React.FC<AnswersProps> = ({
     useEffect(() => {
         if (finish) {
             setTimeout(() => {
-                history.push("/summary")
+                history.push("/over")
             }, 3000)
         }
     }, [finish, dispatch])

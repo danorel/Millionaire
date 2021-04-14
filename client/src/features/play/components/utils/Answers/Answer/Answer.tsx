@@ -2,7 +2,7 @@ import React from "react"
 
 import styles from "./Layout.module.css"
 
-import { useAppDispatch, useAppSelector } from "../../../../../app/hooks"
+import { useAppDispatch, useAppSelector } from "../../../../../../app/hooks"
 
 import {
     fetchActionAsync,
@@ -10,7 +10,7 @@ import {
     selectIndexFail,
     selectIndexLoading,
     setLoadingIndex
-} from "../../../reducers/actionSlice"
+} from "../../../../reducers/actionSlice"
 
 import { ButtonIndex } from "MyModels"
 

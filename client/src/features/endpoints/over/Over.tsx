@@ -1,26 +1,21 @@
 import React from "react"
-import src__SVG_StartHand from "../../assets/containers/start_hand.svg"
+import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 
-import {
-    FlexRow,
-    FlexColumn,
-    FlexColumnGroup
-} from "../../components/layout/flex"
-import {
-    Container,
-    VerticalContainer
-} from "../../components/layout/containers"
+import { FlexRow, FlexColumn, FlexColumnGroup } from "../components/layout/flex"
+
+import { Container, VerticalContainer } from "../components/layout/containers"
+
 import {
     ImageComponent,
     TitleComponent,
     ButtonComponent
-} from "../../components/utils"
+} from "../components/utils"
 
-type StartProps = {}
+type OverProps = {}
 
-export const StartComponent: React.FC<StartProps> = () => (
+export const OverComponent: React.FC<OverProps> = () => (
     <React.Fragment>
-        <Container background>
+        <Container>
             <VerticalContainer>
                 <FlexRow>
                     <FlexColumn>
@@ -32,10 +27,11 @@ export const StartComponent: React.FC<StartProps> = () => (
                     <FlexColumn>
                         <FlexColumnGroup>
                             <TitleComponent
-                                text={"Who wants to be a millionaire?"}
+                                text={"$8,000 earned"}
+                                header={"Total score:"}
                             />
                             <ButtonComponent
-                                text={"Start"}
+                                text={"Try again"}
                                 redirect={"/play"}
                             />
                         </FlexColumnGroup>

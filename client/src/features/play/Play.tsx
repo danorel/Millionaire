@@ -13,15 +13,14 @@ import {
 
 import { selectStep } from "./reducers/actionSlice"
 
-import { Container } from "./components/Layout/Container/Container"
-
-import { GridBox, GridItemBody, GridItemHeader } from "./components/Layout/Grid"
+import { Container } from "./components/layout/Container/Container"
+import { GridBox, GridItemBody, GridItemHeader } from "./components/layout/Grid"
 
 import {
     GridBoxItemScreen,
     GridBoxContainer,
     GridBoxItemLevels
-} from "../../components/layout/grid"
+} from "../endpoints/components/layout/grid"
 
 import {
     LevelsComponent,
@@ -29,7 +28,7 @@ import {
     QuestionComponent
 } from "./components"
 
-import { Navbar } from "../../components/navigation/Navbar/Navbar"
+import { Navbar } from "./components/navigation/Navbar/Navbar"
 
 type PlayProps = {}
 
