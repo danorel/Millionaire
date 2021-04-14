@@ -2,20 +2,20 @@ import React from "react"
 import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 
 import {
+    ViewFlexRow,
+    ViewFlexColumn,
+    ViewFlexColumnGroup
+} from "../components/layout/flex"
+
+import {
     LayoutContainer,
     LayoutVerticalContainer
 } from "../components/layout/containers"
 
 import {
-    ViewFlexRow,
-    ViewFlexColumn,
-    FlexColumnGroup
-} from "../components/layout/flex"
-
-import {
-    ButtonComponent,
+    TitleComponent,
     ImageComponent,
-    TitleComponent
+    ButtonComponent
 } from "../components/utils"
 
 type OverProps = {}
@@ -32,7 +32,7 @@ export const OverComponent: React.FC<OverProps> = () => (
                         />
                     </ViewFlexColumn>
                     <ViewFlexColumn>
-                        <FlexColumnGroup>
+                        <ViewFlexColumnGroup>
                             <TitleComponent
                                 text={"$8,000 earned"}
                                 header={"Total score:"}
@@ -41,7 +41,7 @@ export const OverComponent: React.FC<OverProps> = () => (
                                 text={"Try again"}
                                 redirect={"/play"}
                             />
-                        </FlexColumnGroup>
+                        </ViewFlexColumnGroup>
                     </ViewFlexColumn>
                 </ViewFlexRow>
             </LayoutVerticalContainer>

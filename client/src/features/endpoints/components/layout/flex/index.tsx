@@ -1,6 +1,6 @@
 import { FlexRow as ViewFlexRow } from "./FlexRow/FlexRow"
 import { FlexColumn as ViewFlexColumn } from "./FlexColumn/FlexColumn"
-import { FlexRowGroup } from "./FlexRowGroup/FlexRowGroup"
-import { FlexColumnGroup } from "./FlexColumnGroup/FlexColumnGroup"
+import { FlexRowGroup as ViewFlexRowGroup } from "./FlexRowGroup/FlexRowGroup"
+import { FlexColumnGroup as ViewFlexColumnGroup } from "./FlexColumnGroup/FlexColumnGroup"
 
-export { ViewFlexRow, ViewFlexColumn, FlexRowGroup, FlexColumnGroup }
+export { ViewFlexRow, ViewFlexColumn, ViewFlexRowGroup, ViewFlexColumnGroup }

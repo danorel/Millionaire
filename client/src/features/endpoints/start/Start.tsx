@@ -4,7 +4,7 @@ import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 import {
     ViewFlexRow,
     ViewFlexColumn,
-    FlexColumnGroup
+    ViewFlexColumnGroup
 } from "../components/layout/flex"
 
 import {
@@ -13,8 +13,8 @@ import {
 } from "../components/layout/containers"
 
 import {
-    ImageComponent,
     TitleComponent,
+    ImageComponent,
     ButtonComponent
 } from "../components/utils"
 
@@ -32,7 +32,7 @@ export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
                         />
                     </ViewFlexColumn>
                     <ViewFlexColumn>
-                        <FlexColumnGroup>
+                        <ViewFlexColumnGroup>
                             <TitleComponent
                                 text={"Who wants to be a millionaire?"}
                             />
@@ -40,7 +40,7 @@ export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
                                 text={"Start"}
                                 redirect={"/play"}
                             />
-                        </FlexColumnGroup>
+                        </ViewFlexColumnGroup>
                     </ViewFlexColumn>
                 </ViewFlexRow>
             </LayoutVerticalContainer>
