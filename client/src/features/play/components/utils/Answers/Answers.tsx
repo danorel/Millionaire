@@ -38,7 +38,7 @@ const AnswersComponentNonRouted: React.FC<AnswersProps> = ({
                 history.push("/over")
             }, 3000)
         }
-    }, [finish, dispatch])
+    }, [finish, dispatch, history])
 
     useEffect(() => {
         if (success) {

@@ -63,7 +63,7 @@ export const PlayComponent: React.FC<PlayProps> = (props) => {
 
     useEffect(() => {
         if (winner) props.history.push("/over")
-    }, [winner])
+    }, [props.history, winner])
 
     const onClickOpen = (evt: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
         setOpen(evt.currentTarget.checked)
