@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func InitializeView()  {
+func InitializeStatic()  {
 	stateConfig := (*configs.Config).StateConfig()
 	if stateConfig.Mode() != "development" {
 		http.Handle("/", http.FileServer(http.Dir("client/build")))

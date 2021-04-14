@@ -1,4 +1,4 @@
-package env
+package holders
 
 import "os"
 
@@ -10,10 +10,10 @@ func (c *StateConfig) Mode() string {
 	return c.mode
 }
 
-var StateConfigInstance *StateConfig
+var StateConfigSingleton *StateConfig
 
 func LoadStateConfig() {
-	StateConfigInstance = &StateConfig {
+	StateConfigSingleton = &StateConfig {
 		mode: os.Getenv("NODE_ENV"),
 	}
 }
