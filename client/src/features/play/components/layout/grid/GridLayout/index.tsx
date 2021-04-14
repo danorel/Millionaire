@@ -1,5 +1,5 @@
-import { GridBox } from "./GridBox"
-import { GridItemBody } from "./Item/Body/Body"
-import { GridItemHeader } from "./Item/Header/Header"
+import { GridBox } from "./GridBox/GridBox"
+import { GridItemBody } from "./GridItem/Body/Body"
+import { GridItemHeader } from "./GridItem/Header/Header"
 
 export { GridBox, GridItemBody, GridItemHeader }

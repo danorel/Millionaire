@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import styles from "./Layout.module.css"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
@@ -22,10 +21,12 @@ import {
 } from "./components/layout/grid"
 
 import {
-    GridBoxItemScreen,
-    GridBoxContainer,
-    GridBoxItemLevels
-} from "../endpoints/components/layout/grid"
+    ViewGridBox,
+    ViewGridBoxItemPrimary,
+    ViewGridBoxItemSecondary
+} from "./components/layout/grid"
+
+import { ViewFlexBox } from "./components/layout/flex"
 
 import {
     LevelsComponent,
@@ -66,21 +67,21 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                         <Navbar open={open} onClick={onClickOpen} />
                     </LayoutGridItemHeader>
                     <LayoutGridItemBody>
-                        <GridBoxContainer>
-                            <GridBoxItemScreen>
+                        <ViewGridBox>
+                            <ViewGridBoxItemPrimary>
                                 {open ? (
-                                    <div className={styles.div__flex_screen}>
+                                    <ViewFlexBox>
                                         <QuestionComponent text={question} />
                                         <AnswersComponent values={answers} />
-                                    </div>
+                                    </ViewFlexBox>
                                 ) : (
                                     <LevelsComponent step={step} />
                                 )}
-                            </GridBoxItemScreen>
-                            <GridBoxItemLevels>
+                            </ViewGridBoxItemPrimary>
+                            <ViewGridBoxItemSecondary>
                                 <LevelsComponent step={step} />
-                            </GridBoxItemLevels>
-                        </GridBoxContainer>
+                            </ViewGridBoxItemSecondary>
+                        </ViewGridBox>
                     </LayoutGridItemBody>
                 </LayoutGridBox>
             </LayoutContainer>
