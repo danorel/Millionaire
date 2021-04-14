@@ -1,13 +1,13 @@
 import React from "react"
 import styles from "./Container.module.css"
 
-type ContainerProps = {
+type PlayContainerProps = {
     children: React.ReactNode
 }
 
-export const Container: React.FC<ContainerProps> = ({
+export const Container: React.FC<PlayContainerProps> = ({
     children
-}: ContainerProps) => (
+}: PlayContainerProps) => (
     <React.Fragment>
         <div className={styles.div__container}>{children}</div>
     </React.Fragment>

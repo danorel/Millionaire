@@ -13,8 +13,13 @@ import {
 
 import { selectStep } from "./reducers/actionSlice"
 
-import { Container } from "./components/layout/Container/Container"
-import { GridBox, GridItemBody, GridItemHeader } from "./components/layout/Grid"
+import { LayoutContainer } from "./components/layout/container"
+
+import {
+    LayoutGridBox,
+    LayoutGridItemBody,
+    LayoutGridItemHeader
+} from "./components/layout/grid"
 
 import {
     GridBoxItemScreen,
@@ -55,12 +60,12 @@ export const PlayComponent: React.FC<PlayProps> = () => {
 
     return (
         <React.Fragment>
-            <Container>
-                <GridBox>
-                    <GridItemHeader>
+            <LayoutContainer>
+                <LayoutGridBox>
+                    <LayoutGridItemHeader>
                         <Navbar open={open} onClick={onClickOpen} />
-                    </GridItemHeader>
-                    <GridItemBody>
+                    </LayoutGridItemHeader>
+                    <LayoutGridItemBody>
                         <GridBoxContainer>
                             <GridBoxItemScreen>
                                 {open ? (
@@ -76,9 +81,9 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                                 <LevelsComponent step={step} />
                             </GridBoxItemLevels>
                         </GridBoxContainer>
-                    </GridItemBody>
-                </GridBox>
-            </Container>
+                    </LayoutGridItemBody>
+                </LayoutGridBox>
+            </LayoutContainer>
         </React.Fragment>
     )
 }

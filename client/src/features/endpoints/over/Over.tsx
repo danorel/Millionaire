@@ -1,14 +1,14 @@
 import React from "react"
 import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 
-import { FlexRow, FlexColumn, FlexColumnGroup } from "../components/layout/flex"
-
 import { Container, VerticalContainer } from "../components/layout/containers"
 
+import { FlexColumn, FlexColumnGroup, FlexRow } from "../components/layout/flex"
+
 import {
+    ButtonComponent,
     ImageComponent,
-    TitleComponent,
-    ButtonComponent
+    TitleComponent
 } from "../components/utils"
 
 type OverProps = {}

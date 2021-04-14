@@ -13,7 +13,7 @@ import {
 
 type StartProps = {}
 
-export const StartComponent: React.FC<StartProps> = () => (
+export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
     <React.Fragment>
         <Container background>
             <VerticalContainer>
