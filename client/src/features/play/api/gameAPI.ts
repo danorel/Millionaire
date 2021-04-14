@@ -20,30 +20,30 @@ export function fetchConfig() {
                             },
                             {
                                 answers: [
-                                    { correct: true, text: "14 years" },
-                                    { correct: false, text: "11 years" },
+                                    { correct: true, text: "5 years" },
+                                    { correct: false, text: "4 years" },
                                     { correct: true, text: "9 years" },
-                                    { correct: false, text: "10 years" }
+                                    { correct: false, text: "13 years" }
                                 ],
                                 question:
-                                    "How old your elder brother was 10 years before you was born, mate?"
+                                    "Another question: How old your elder sister was 15 years before you was born, mate?"
                             },
                             {
                                 answers: [
-                                    { correct: true, text: "14 years" },
-                                    { correct: false, text: "11 years" },
-                                    { correct: true, text: "9 years" },
-                                    { correct: false, text: "10 years" }
+                                    { correct: true, text: "Kyiv" },
+                                    { correct: false, text: "Krakow" },
+                                    { correct: false, text: "London" },
+                                    { correct: false, text: "Washington" }
                                 ],
                                 question:
-                                    "How old your elder brother was 10 years before you was born, mate?"
+                                    "The short one... The capital of Ukraine"
                             },
                             {
                                 answers: [
-                                    { correct: true, text: "14 years" },
-                                    { correct: false, text: "11 years" },
+                                    { correct: true, text: "5 years" },
+                                    { correct: false, text: "4 years" },
                                     { correct: true, text: "9 years" },
-                                    { correct: false, text: "10 years" }
+                                    { correct: false, text: "13 years" }
                                 ],
                                 question:
                                     "How old your elder brother was 10 years before you was born, mate?"

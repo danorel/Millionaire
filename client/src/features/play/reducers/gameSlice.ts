@@ -56,7 +56,6 @@ export const gameSlice = createSlice({
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
 
 export const selectConfig = (state: RootState) => state.game.config
-export const selectPrizes = (state: RootState) => state.game.config.prizes
 export const selectStatus = (state: RootState) => state.game.status
 
 export const selectQuestionByStep = (state: RootState, step: number) =>
@@ -68,7 +67,22 @@ export const selectQuestionByStep = (state: RootState, step: number) =>
 
 /**
  * State answer selector.
- * - selectAnswersByIndex: Extracts
+ * - selectPrizes: Extracts all possible prizes fetched from the config.
+ * - selectPrizeByStep: Extracts the prize by the step, which the user won.
+ */
+export const selectPrizes = (state: RootState) => state.game.config.prizes
+
+export const selectPrizeByStep = (state: RootState, step: number) =>
+    step < 0 || step >= state.game.config.prizes.length
+        ? "$0"
+        : state.game.config.prizes.length
+        ? state.game.config.prizes[step]
+        : "$0"
+
+/**
+ * State answer selector.
+ * - selectAnswersByIndex: Extracts the answers by certain step.
+ * - selectAnswerCorrectIndicesByStep: Extracts correct indices of answers by certain step.
  */
 export const selectAnswersByStep = (state: RootState, step: number) =>
     step < 0 || step >= state.game.config.options.length

@@ -1,6 +1,10 @@
 import React from "react"
 import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 
+import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+
+import { selectPrizeByStep, selectPrizes } from "../../play/reducers/gameSlice"
+
 import {
     ViewFlexRow,
     ViewFlexColumn,
@@ -17,34 +21,44 @@ import {
     ImageComponent,
     ButtonComponent
 } from "../components/utils"
+import { selectStep } from "../../play/reducers/actionSlice"
 
 type OverProps = {}
 
-export const OverComponent: React.FC<OverProps> = () => (
-    <React.Fragment>
-        <LayoutContainer>
-            <LayoutVerticalContainer>
-                <ViewFlexRow>
-                    <ViewFlexColumn>
-                        <ImageComponent
-                            alt={"Millionaire"}
-                            src={src__SVG_StartHand}
-                        />
-                    </ViewFlexColumn>
-                    <ViewFlexColumn>
-                        <ViewFlexColumnGroup>
-                            <TitleComponent
-                                text={"$8,000 earned"}
-                                header={"Total score:"}
+export const OverComponent: React.FC<OverProps> = () => {
+    const step = useAppSelector(selectStep)
+
+    const prizes = useAppSelector(selectPrizes)
+    const prize = useAppSelector((state) =>
+        selectPrizeByStep(state, prizes.length - 1 - (step - 1))
+    )
+
+    return (
+        <React.Fragment>
+            <LayoutContainer>
+                <LayoutVerticalContainer>
+                    <ViewFlexRow>
+                        <ViewFlexColumn>
+                            <ImageComponent
+                                alt={"Millionaire"}
+                                src={src__SVG_StartHand}
                             />
-                            <ButtonComponent
-                                text={"Try again"}
-                                redirect={"/play"}
-                            />
-                        </ViewFlexColumnGroup>
-                    </ViewFlexColumn>
-                </ViewFlexRow>
-            </LayoutVerticalContainer>
-        </LayoutContainer>
-    </React.Fragment>
-)
+                        </ViewFlexColumn>
+                        <ViewFlexColumn>
+                            <ViewFlexColumnGroup>
+                                <TitleComponent
+                                    text={`${prize} earned`}
+                                    header={"Total score:"}
+                                />
+                                <ButtonComponent
+                                    text={"Try again"}
+                                    redirect={"/play"}
+                                />
+                            </ViewFlexColumnGroup>
+                        </ViewFlexColumn>
+                    </ViewFlexRow>
+                </LayoutVerticalContainer>
+            </LayoutContainer>
+        </React.Fragment>
+    )
+}
