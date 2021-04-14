@@ -29,6 +29,6 @@ func LoadServerConfig() {
 		protocol: os.Getenv("SERVER_PROTOCOL"),
 		host:	  os.Getenv("SERVER_HOST"),
 		port:	  os.Getenv("SERVER_PORT"),
-		addr: 	  os.Getenv("SERVER_HOST") + ":" + os.Getenv("SERVER_PORT"),
+		addr: 	  ":" + os.Getenv("SERVER_PORT"),
 	}
 }
