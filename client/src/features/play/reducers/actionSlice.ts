@@ -93,6 +93,8 @@ export const {
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.action.finish)`
 export const selectStep = (state: RootState) => state.action.step
+export const selectWinner = (state: RootState, steps: number) =>
+    steps <= 0 ? false : state.action.step >= steps
 
 export const selectFinish = (state: RootState) => state.action.finish
 export const selectStatus = (state: RootState) => state.action.status

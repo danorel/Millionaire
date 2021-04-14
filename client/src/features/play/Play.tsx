@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { RouteComponentProps } from "react-router-dom"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
@@ -10,7 +11,7 @@ import {
     selectQuestionByStep
 } from "./reducers/gameSlice"
 
-import { selectStep } from "./reducers/actionSlice"
+import { selectStep, selectWinner } from "./reducers/actionSlice"
 
 import { LayoutContainer } from "./components/layout/container"
 
@@ -36,9 +37,9 @@ import {
 
 import { Navbar } from "./components/navigation/Navbar/Navbar"
 
-type PlayProps = {}
+interface PlayProps extends RouteComponentProps {}
 
-export const PlayComponent: React.FC<PlayProps> = () => {
+export const PlayComponent: React.FC<PlayProps> = (props) => {
     const [open, setOpen] = useState(true)
 
     const step = useAppSelector(selectStep)
@@ -50,6 +51,8 @@ export const PlayComponent: React.FC<PlayProps> = () => {
         selectQuestionByStep(state, step)
     )
 
+    const winner = useAppSelector((state) => selectWinner(state, prizes.length))
+
     const dispatch = useAppDispatch()
 
     useEffect(() => {
@@ -58,10 +61,14 @@ export const PlayComponent: React.FC<PlayProps> = () => {
         }
     }, [status, dispatch])
 
+    useEffect(() => {
+        if (winner) props.history.push("/over")
+    }, [winner])
+
     const onClickOpen = (evt: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
         setOpen(evt.currentTarget.checked)
 
-    if (status === "loading") return <React.Fragment>Loading...</React.Fragment>
+    if (status === "loading") return <React.Fragment />
 
     return (
         <React.Fragment>
