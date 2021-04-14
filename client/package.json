@@ -1,7 +1,30 @@
 {
-    "name": "client",
-    "version": "0.1.0",
-    "private": true,
+    "name": "millionaire",
+    "version": "1.0.7",
+    "license": "ISC",
+    "author": "Danyil Orel",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/danorel/Millionaire.git"
+    },
+    "bugs": {
+        "url": "https://github.com/danorel/Millionaire/issues"
+    },
+    "homepage": "https://github.com/danorel/Millionaire#readme",
+    "description": "Golang web application as technical assignment",
+    "keywords": [
+        "Golang",
+        "React"
+    ],
+    "main": "index.tsx",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "start:lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
+        "start:formatting": "prettier --write \"client/**/*.{js,jsx,ts,tsx,html,css,json}\" --ignore-unknown"
+    },
     "dependencies": {
         "@reduxjs/toolkit": "^1.5.1",
         "@testing-library/jest-dom": "^4.2.4",
@@ -21,13 +44,6 @@
         "react-scripts": "4.0.3",
         "typescript": "^4.1.5"
     },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
-    },
     "eslintConfig": {
         "extends": "react-app"
     },
@@ -44,6 +60,7 @@
         ]
     },
     "devDependencies": {
+        "prettier": "2.2.1",
         "@typescript-eslint/eslint-plugin": "^4.21.0",
         "@typescript-eslint/parser": "^4.21.0",
         "eslint": "^7.24.0",

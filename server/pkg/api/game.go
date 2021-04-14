@@ -1,13 +1,19 @@
 package api
 
 import (
-	"fmt"
+	"encoding/json"
 	"github.com/danorel/Millionaire/configs"
+	"github.com/danorel/Millionaire/pkg/middleware"
 	"net/http"
 )
 
 func GameRouteHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
+	middleware.InitializeCors(&w, r)
+	if (*r).Method == "OPTIONS" {
+		return
+	}
+
+	if r.URL.Path != "/api/game" {
 		http.Error(w, "404 not found.", http.StatusNotFound)
 		return
 	}
@@ -18,7 +24,13 @@ func GameRouteHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	clientConfig := (*configs.Config).ClientConfig()
-	if _, err := fmt.Fprintf(w, "Server configuration file: %v", clientConfig); err != nil {
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.WriteHeader(http.StatusCreated)
+
+	err := json.NewEncoder(w).Encode(clientConfig)
+	if err != nil {
 		return
 	}
 }

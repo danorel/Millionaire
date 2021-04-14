@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"github.com/danorel/Millionaire/configs"
 	"github.com/danorel/Millionaire/pkg/api"
 	"github.com/danorel/Millionaire/pkg/middleware"
 	"log"
@@ -15,6 +16,8 @@ import (
 func main() {
 	httpServerExitDone := &sync.WaitGroup{}
 	httpServerExitDone.Add(1)
+
+	configs.LoadConfigs()
 
 	server := api.InitializeHTTPServer(httpServerExitDone)
 	api.InitializeHTTPRoutes()
