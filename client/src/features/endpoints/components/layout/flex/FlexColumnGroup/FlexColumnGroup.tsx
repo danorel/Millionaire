@@ -9,6 +9,6 @@ export const FlexColumnGroup: React.FC<FlexColumnGroupProps> = ({
     children
 }: FlexColumnGroupProps) => (
     <React.Fragment>
-        <div className={styles.column__group}>{children}</div>
+        <div className={styles.div__column}>{children}</div>
     </React.Fragment>
 )

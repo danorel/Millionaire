@@ -1,4 +1,4 @@
-.column {
+.div__column {
     display: flex;
     flex-direction: column;
     flex-flow: column nowrap;
@@ -6,7 +6,7 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
-    .column {
+    .div__column {
         height: 50%;
         width: 100%;
         flex-flow: column wrap;
@@ -16,7 +16,7 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
-    .column {
+    .div__column {
         height: 50%;
         width: 100%;
         flex-flow: column wrap;
@@ -26,7 +26,7 @@
 
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
-    .column {
+    .div__column {
         height: 50%;
         width: 100%;
         flex-flow: column wrap;
@@ -36,7 +36,7 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
-    .column {
+    .div__column {
         width: 50%;
         flex-flow: column nowrap;
         justify-content: space-evenly;
@@ -45,7 +45,7 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
-    .column {
+    .div__column {
         width: 50%;
         flex-flow: column nowrap;
         justify-content: space-evenly;

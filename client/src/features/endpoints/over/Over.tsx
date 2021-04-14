@@ -1,9 +1,16 @@
 import React from "react"
 import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 
-import { Container, VerticalContainer } from "../components/layout/containers"
+import {
+    LayoutContainer,
+    LayoutVerticalContainer
+} from "../components/layout/containers"
 
-import { FlexColumn, FlexColumnGroup, FlexRow } from "../components/layout/flex"
+import {
+    ViewFlexRow,
+    ViewFlexColumn,
+    FlexColumnGroup
+} from "../components/layout/flex"
 
 import {
     ButtonComponent,
@@ -15,16 +22,16 @@ type OverProps = {}
 
 export const OverComponent: React.FC<OverProps> = () => (
     <React.Fragment>
-        <Container>
-            <VerticalContainer>
-                <FlexRow>
-                    <FlexColumn>
+        <LayoutContainer>
+            <LayoutVerticalContainer>
+                <ViewFlexRow>
+                    <ViewFlexColumn>
                         <ImageComponent
                             alt={"Millionaire"}
                             src={src__SVG_StartHand}
                         />
-                    </FlexColumn>
-                    <FlexColumn>
+                    </ViewFlexColumn>
+                    <ViewFlexColumn>
                         <FlexColumnGroup>
                             <TitleComponent
                                 text={"$8,000 earned"}
@@ -35,9 +42,9 @@ export const OverComponent: React.FC<OverProps> = () => (
                                 redirect={"/play"}
                             />
                         </FlexColumnGroup>
-                    </FlexColumn>
-                </FlexRow>
-            </VerticalContainer>
-        </Container>
+                    </ViewFlexColumn>
+                </ViewFlexRow>
+            </LayoutVerticalContainer>
+        </LayoutContainer>
     </React.Fragment>
 )

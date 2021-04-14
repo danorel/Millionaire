@@ -7,6 +7,6 @@ type FlexRowProps = {
 
 export const FlexRow: React.FC<FlexRowProps> = ({ children }: FlexRowProps) => (
     <React.Fragment>
-        <div className={styles.row}>{children}</div>
+        <div className={styles.div__row}>{children}</div>
     </React.Fragment>
 )

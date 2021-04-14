@@ -10,7 +10,7 @@ export const VerticalContainer: React.FC<VerticalContainerProps> = (
 ) => {
     return (
         <React.Fragment>
-            <div className={styles.container__centrify}>{props.children}</div>
+            <div className={styles.div__container}>{props.children}</div>
         </React.Fragment>
     )
 }

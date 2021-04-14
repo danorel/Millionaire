@@ -1,9 +1,16 @@
 import React from "react"
 import src__SVG_StartHand from "../../../assets/containers/start_hand.svg"
 
-import { FlexRow, FlexColumn, FlexColumnGroup } from "../components/layout/flex"
+import {
+    ViewFlexRow,
+    ViewFlexColumn,
+    FlexColumnGroup
+} from "../components/layout/flex"
 
-import { Container, VerticalContainer } from "../components/layout/containers"
+import {
+    LayoutContainer,
+    LayoutVerticalContainer
+} from "../components/layout/containers"
 
 import {
     ImageComponent,
@@ -15,16 +22,16 @@ type StartProps = {}
 
 export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
     <React.Fragment>
-        <Container background>
-            <VerticalContainer>
-                <FlexRow>
-                    <FlexColumn>
+        <LayoutContainer background>
+            <LayoutVerticalContainer>
+                <ViewFlexRow>
+                    <ViewFlexColumn>
                         <ImageComponent
                             alt={"Millionaire"}
                             src={src__SVG_StartHand}
                         />
-                    </FlexColumn>
-                    <FlexColumn>
+                    </ViewFlexColumn>
+                    <ViewFlexColumn>
                         <FlexColumnGroup>
                             <TitleComponent
                                 text={"Who wants to be a millionaire?"}
@@ -34,9 +41,9 @@ export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
                                 redirect={"/play"}
                             />
                         </FlexColumnGroup>
-                    </FlexColumn>
-                </FlexRow>
-            </VerticalContainer>
-        </Container>
+                    </ViewFlexColumn>
+                </ViewFlexRow>
+            </LayoutVerticalContainer>
+        </LayoutContainer>
     </React.Fragment>
 )
