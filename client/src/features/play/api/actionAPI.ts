@@ -1,14 +1,14 @@
-// A mock function to mimic making an async request for data
-import { Option } from "MyModels"
+import { UserChoice, ButtonIndex } from "MyModels"
 
-export function fetchAction(index: number) {
-    return new Promise<{ data: Option }>((resolve) =>
+// A mock function to mimic making an async request for data
+export function fetchAction(success: boolean, indexCorrect: ButtonIndex) {
+    return new Promise<{ data: UserChoice }>((resolve) =>
         setTimeout(
             () =>
                 resolve({
                     data: {
-                        success: index === 0,
-                        indexCorrect: 0
+                        success: success,
+                        indexCorrect: indexCorrect
                     }
                 }),
             2000

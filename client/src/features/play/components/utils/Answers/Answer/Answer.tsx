@@ -9,6 +9,7 @@ import {
     selectIndexCorrect,
     selectIndexFail,
     selectIndexLoading,
+    selectStep,
     setLoadingIndex
 } from "../../../../reducers/actionSlice"
 
@@ -16,6 +17,7 @@ import { ButtonIndex } from "MyModels"
 
 import { Dash } from "./Dash/Dash"
 import { Button } from "./Button/Button"
+import { selectConfig } from "../../../../reducers/gameSlice"
 
 type AnswerProps = {
     index: ButtonIndex
@@ -30,6 +32,9 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
 }: AnswerProps) => {
     const dispatch = useAppDispatch()
 
+    const step = useAppSelector(selectStep)
+    const config = useAppSelector(selectConfig)
+
     const indexFail = useAppSelector(selectIndexFail)
     const indexCorrect = useAppSelector(selectIndexCorrect)
     const indexLoading = useAppSelector(selectIndexLoading)
@@ -39,7 +44,9 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
             <div
                 onClick={() => {
                     dispatch(setLoadingIndex(index))
-                    dispatch(fetchActionAsync(index))
+                    dispatch(
+                        fetchActionAsync({ indexCorrect: 0, success: true })
+                    )
                 }}
                 className={styles.div__grid_layout_container}
             >

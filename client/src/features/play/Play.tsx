@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react"
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
 import {
-    fetchAnswersAsync,
-    fetchQuestionAsync,
+    fetchConfigAsync,
     selectStatus,
-    selectAnswers,
-    selectQuestion
-} from "./reducers/playSlice"
+    selectPrizes,
+    selectAnswersByIndex,
+    selectQuestionByIndex
+} from "./reducers/gameSlice"
 
 import { selectStep } from "./reducers/actionSlice"
 
@@ -42,22 +42,26 @@ export const PlayComponent: React.FC<PlayProps> = () => {
     const [open, setOpen] = useState(true)
 
     const step = useAppSelector(selectStep)
-
     const status = useAppSelector(selectStatus)
-    const answers = useAppSelector(selectAnswers)
-    const question = useAppSelector(selectQuestion)
+
+    const prizes = useAppSelector(selectPrizes)
+    const answers = useAppSelector((state) => selectAnswersByIndex(state, step))
+    const question = useAppSelector((state) =>
+        selectQuestionByIndex(state, step)
+    )
 
     const dispatch = useAppDispatch()
 
     useEffect(() => {
         if (status === "idle") {
-            dispatch(fetchQuestionAsync())
-            dispatch(fetchAnswersAsync())
+            dispatch(fetchConfigAsync())
         }
     }, [status, dispatch])
 
     const onClickOpen = (evt: React.MouseEvent<HTMLInputElement, MouseEvent>) =>
         setOpen(evt.currentTarget.checked)
+
+    if (status === "loading") return <React.Fragment>Loading...</React.Fragment>
 
     return (
         <React.Fragment>
@@ -75,11 +79,14 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                                         <AnswersComponent values={answers} />
                                     </ViewFlexBox>
                                 ) : (
-                                    <LevelsComponent step={step} />
+                                    <LevelsComponent
+                                        prizes={prizes}
+                                        step={step}
+                                    />
                                 )}
                             </ViewGridBoxItemPrimary>
                             <ViewGridBoxItemSecondary>
-                                <LevelsComponent step={step} />
+                                <LevelsComponent prizes={prizes} step={step} />
                             </ViewGridBoxItemSecondary>
                         </ViewGridBox>
                     </LayoutGridItemBody>

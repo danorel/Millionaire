@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../../app/store"
-import { fetchAction } from "../api/actionAPI"
+import { ButtonIndex, UserChoice } from "MyModels"
 
-import { ButtonIndex } from "MyModels"
+import { fetchAction } from "../api/actionAPI"
 
 export interface ActionState {
     step: number
@@ -33,8 +33,8 @@ const initialState: ActionState = {
 // typically used to make async requests.
 export const fetchActionAsync = createAsyncThunk(
     "play/fetchAction",
-    async (index: ButtonIndex) => {
-        const response = await fetchAction(index)
+    async (args: UserChoice) => {
+        const response = await fetchAction(args.success, args.indexCorrect)
         // The value we return becomes the `fulfilled` action payload
         return response.data
     }
