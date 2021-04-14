@@ -1,15 +1,11 @@
 .button__span_header {
-    /* Desktop / Button */
     font-family: Inter, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 5vmin;
-    /* or 23px */
     display: flex;
     align-items: center;
     text-align: center;
-
-    /* Orange-100 */
     color: #ff8b37;
 }
 
@@ -18,11 +14,8 @@
     font-style: normal;
     font-weight: normal;
     font-size: 5vmin;
-    /* or 23px */
     display: flex;
     align-items: center;
-
-    /* Black-100 */
     color: #1c1c21;
 }
 

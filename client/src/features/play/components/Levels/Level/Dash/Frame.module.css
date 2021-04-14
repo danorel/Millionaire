@@ -1,0 +1,16 @@
+.div__image_frame {
+    background: rgb(0, 0, 0) url("../../../../../../assets/dashes/dash.svg")
+        no-repeat center;
+}
+
+.div__image_frame_active {
+    background: rgb(0, 0, 0)
+        url("../../../../../../assets/dashes/dash_active.svg") no-repeat center;
+}
+
+.div__image_frame,
+.div__image_frame_active {
+    width: 100%;
+    height: 1px;
+    background-size: 100% auto;
+}

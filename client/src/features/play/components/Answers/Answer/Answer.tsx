@@ -1,7 +1,6 @@
-import React, { useEffect } from "react"
-import { withRouter } from "react-router-dom"
+import React from "react"
 
-import styles from "./Answer.module.css"
+import styles from "./Layout.module.css"
 
 import { useAppDispatch, useAppSelector } from "../../../../../app/hooks"
 
