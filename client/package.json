@@ -21,8 +21,8 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "start:lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-        "start:formatting": "prettier --write \"client/**/*.{js,jsx,ts,tsx,html,css,json}\" --ignore-unknown"
+        "eslint": "tsc --noEmit && eslint src/**/*.ts{,x} --fix",
+        "formatting": "prettier --write \"src/**/*.{js,jsx,ts,tsx,html,css,json}\" --ignore-unknown"
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.5.1",
