@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../../../../app/hooks"
 import {
     selectFinish,
     selectSuccess,
-    setDefaultIndex,
+    setIndicesDefault,
     setIncrementStep
 } from "../../../reducers/actionSlice"
 
@@ -44,7 +44,7 @@ const AnswersComponentNonRouted: React.FC<AnswersProps> = ({
         if (success) {
             setTimeout(() => {
                 dispatch(setIncrementStep())
-                dispatch(setDefaultIndex())
+                dispatch(setIndicesDefault())
             }, 3000)
         }
     }, [success, dispatch])

@@ -6,8 +6,8 @@ import {
     fetchConfigAsync,
     selectStatus,
     selectPrizes,
-    selectAnswersByIndex,
-    selectQuestionByIndex
+    selectAnswersByStep,
+    selectQuestionByStep
 } from "./reducers/gameSlice"
 
 import { selectStep } from "./reducers/actionSlice"
@@ -45,9 +45,9 @@ export const PlayComponent: React.FC<PlayProps> = () => {
     const status = useAppSelector(selectStatus)
 
     const prizes = useAppSelector(selectPrizes)
-    const answers = useAppSelector((state) => selectAnswersByIndex(state, step))
+    const answers = useAppSelector((state) => selectAnswersByStep(state, step))
     const question = useAppSelector((state) =>
-        selectQuestionByIndex(state, step)
+        selectQuestionByStep(state, step)
     )
 
     const dispatch = useAppDispatch()

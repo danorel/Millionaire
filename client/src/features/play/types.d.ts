@@ -43,8 +43,8 @@ declare module "MyModels" {
 
     /* Server-side validation of the correct answers */
     export type UserChoice = {
+        indices: (-1 | ButtonIndex)[]
         success: boolean
-        indexCorrect: ButtonIndex
     }
 
     /**

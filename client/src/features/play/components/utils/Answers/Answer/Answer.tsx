@@ -6,18 +6,19 @@ import { useAppDispatch, useAppSelector } from "../../../../../../app/hooks"
 
 import {
     fetchActionAsync,
-    selectIndexCorrect,
+    selectStep,
     selectIndexFail,
     selectIndexLoading,
-    selectStep,
-    setLoadingIndex
+    selectIndicesCorrect,
+    setIndexLoading
 } from "../../../../reducers/actionSlice"
+
+import { selectAnswerCorrectIndicesByStep } from "../../../../reducers/gameSlice"
 
 import { ButtonIndex } from "MyModels"
 
 import { Dash } from "./Dash/Dash"
 import { Button } from "./Button/Button"
-import { selectConfig } from "../../../../reducers/gameSlice"
 
 type AnswerProps = {
     index: ButtonIndex
@@ -33,19 +34,25 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
     const dispatch = useAppDispatch()
 
     const step = useAppSelector(selectStep)
-    const config = useAppSelector(selectConfig)
+
+    const indicesCorrectByStep = useAppSelector((state) =>
+        selectAnswerCorrectIndicesByStep(state, step)
+    )
 
     const indexFail = useAppSelector(selectIndexFail)
-    const indexCorrect = useAppSelector(selectIndexCorrect)
     const indexLoading = useAppSelector(selectIndexLoading)
+    const indicesCorrect = useAppSelector(selectIndicesCorrect)
 
     return (
         <React.Fragment>
             <div
                 onClick={() => {
-                    dispatch(setLoadingIndex(index))
+                    dispatch(setIndexLoading(index))
                     dispatch(
-                        fetchActionAsync({ indexCorrect: 0, success: true })
+                        fetchActionAsync({
+                            indices: indicesCorrectByStep,
+                            success: indicesCorrectByStep.includes(index)
+                        })
                     )
                 }}
                 className={styles.div__grid_layout_container}
@@ -59,7 +66,7 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
                         letter={letter}
                         fail={indexFail === index}
                         loading={indexLoading === index}
-                        success={indexCorrect === index}
+                        success={indicesCorrect.includes(index)}
                     />
                 </div>
                 <div className={styles.div__grid_layout_item_right}>

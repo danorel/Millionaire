@@ -11,7 +11,7 @@ export interface ActionState {
     success: boolean
     indexFail: -1 | ButtonIndex
     indexLoading: -1 | ButtonIndex
-    indexCorrect: -1 | ButtonIndex
+    indicesCorrect: (-1 | ButtonIndex)[]
     error: any
 }
 
@@ -20,8 +20,8 @@ const initialState: ActionState = {
     finish: false,
     success: false,
     indexFail: -1,
-    indexCorrect: -1,
     indexLoading: -1,
+    indicesCorrect: [],
     status: "idle",
     error: null
 }
@@ -33,8 +33,8 @@ const initialState: ActionState = {
 // typically used to make async requests.
 export const fetchActionAsync = createAsyncThunk(
     "play/fetchAction",
-    async (args: UserChoice) => {
-        const response = await fetchAction(args.success, args.indexCorrect)
+    async (arg: UserChoice) => {
+        const response = await fetchAction(arg)
         // The value we return becomes the `fulfilled` action payload
         return response.data
     }
@@ -44,19 +44,19 @@ export const actionSlice = createSlice({
     name: "action",
     initialState,
     reducers: {
-        setDefaultIndex: (state) => {
+        setIndicesDefault: (state) => {
             state.indexFail = -1
-            state.indexCorrect = -1
             state.indexLoading = -1
+            state.indicesCorrect = []
         },
         setIncrementStep: (state) => {
             state.step = state.step + 1
         },
-        setLoadingIndex: (state, action: PayloadAction<ButtonIndex>) => {
+        setIndexLoading: (state, action: PayloadAction<ButtonIndex>) => {
             state.success = false
             state.indexFail = -1
-            state.indexCorrect = -1
             state.indexLoading = action.payload
+            state.indicesCorrect = []
         }
     },
     extraReducers: (builder) => {
@@ -72,7 +72,7 @@ export const actionSlice = createSlice({
                     ? state.indexLoading
                     : -1
                 state.indexLoading = -1
-                state.indexCorrect = action.payload.indexCorrect
+                state.indicesCorrect = action.payload.indices
                 state.finish = !action.payload.success
             })
             .addCase(fetchActionAsync.rejected, (state, action) => {
@@ -84,9 +84,9 @@ export const actionSlice = createSlice({
 })
 
 export const {
-    setDefaultIndex,
     setIncrementStep,
-    setLoadingIndex
+    setIndexLoading,
+    setIndicesDefault
 } = actionSlice.actions
 
 // The function below is called a selector and allows us to select a value from
@@ -99,9 +99,9 @@ export const selectStatus = (state: RootState) => state.action.status
 
 export const selectSuccess = (state: RootState) => state.action.success
 export const selectIndexFail = (state: RootState) => state.action.indexFail
-export const selectIndexCorrect = (state: RootState) =>
-    state.action.indexCorrect
 export const selectIndexLoading = (state: RootState) =>
     state.action.indexLoading
+export const selectIndicesCorrect = (state: RootState) =>
+    state.action.indicesCorrect
 
 export default actionSlice.reducer

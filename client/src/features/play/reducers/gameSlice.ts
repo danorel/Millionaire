@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../../app/store"
 import { fetchConfig } from "../api/gameAPI"
 
-import { Config } from "MyModels"
+import { Config, ButtonIndex } from "MyModels"
 
 export interface GameState {
     error: any
@@ -54,16 +54,51 @@ export const gameSlice = createSlice({
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
+
 export const selectConfig = (state: RootState) => state.game.config
 export const selectPrizes = (state: RootState) => state.game.config.prizes
 export const selectStatus = (state: RootState) => state.game.status
-export const selectAnswersByIndex = (state: RootState, index: number) =>
-    state.game.config.options.length
-        ? state.game.config.options[index].answers
-        : []
-export const selectQuestionByIndex = (state: RootState, index: number) =>
-    state.game.config.options.length
-        ? state.game.config.options[index].question
+
+export const selectQuestionByStep = (state: RootState, step: number) =>
+    step < 0 || step >= state.game.config.options.length
+        ? ""
+        : state.game.config.options.length
+        ? state.game.config.options[step].question
         : ""
+
+/**
+ * State answer selector.
+ * - selectAnswersByIndex: Extracts
+ */
+export const selectAnswersByStep = (state: RootState, step: number) =>
+    step < 0 || step >= state.game.config.options.length
+        ? []
+        : state.game.config.options.length
+        ? state.game.config.options[step].answers
+        : []
+
+export const selectAnswerCorrectIndicesByStep = (
+    state: RootState,
+    step: number
+) =>
+    selectAnswersByStep(state, step)
+        // Answer[]
+        // [{
+        //     text: string
+        //     correct: boolean
+        // }]
+        .map((answer, index: number) => {
+            return { ...answer, index }
+        })
+        // Answer[]
+        // [{
+        //     index: number
+        //     text: string
+        //     correct: boolean
+        // }]
+        .filter((answer) => answer.correct)
+        // number[]
+        // [1, 3]
+        .map((answer) => answer.index as ButtonIndex)
 
 export default gameSlice.reducer
