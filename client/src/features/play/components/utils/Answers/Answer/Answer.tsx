@@ -6,11 +6,14 @@ import { useAppDispatch, useAppSelector } from "../../../../../../app/hooks"
 
 import {
     fetchActionAsync,
-    selectIndexCorrect,
+    selectStep,
     selectIndexFail,
     selectIndexLoading,
-    setLoadingIndex
+    selectIndicesCorrect,
+    setIndexLoading
 } from "../../../../reducers/actionSlice"
+
+import { selectAnswerCorrectIndicesByStep } from "../../../../reducers/gameSlice"
 
 import { ButtonIndex } from "MyModels"
 
@@ -30,16 +33,27 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
 }: AnswerProps) => {
     const dispatch = useAppDispatch()
 
+    const step = useAppSelector(selectStep)
+
+    const indicesCorrectByStep = useAppSelector((state) =>
+        selectAnswerCorrectIndicesByStep(state, step)
+    )
+
     const indexFail = useAppSelector(selectIndexFail)
-    const indexCorrect = useAppSelector(selectIndexCorrect)
     const indexLoading = useAppSelector(selectIndexLoading)
+    const indicesCorrect = useAppSelector(selectIndicesCorrect)
 
     return (
         <React.Fragment>
             <div
                 onClick={() => {
-                    dispatch(setLoadingIndex(index))
-                    dispatch(fetchActionAsync(index))
+                    dispatch(setIndexLoading(index))
+                    dispatch(
+                        fetchActionAsync({
+                            indices: indicesCorrectByStep,
+                            success: indicesCorrectByStep.includes(index)
+                        })
+                    )
                 }}
                 className={styles.div__grid_layout_container}
             >
@@ -52,7 +66,7 @@ export const AnswerComponent: React.FC<AnswerProps> = ({
                         letter={letter}
                         fail={indexFail === index}
                         loading={indexLoading === index}
-                        success={indexCorrect === index}
+                        success={indicesCorrect.includes(index)}
                     />
                 </div>
                 <div className={styles.div__grid_layout_item_right}>
