@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI-Development
 
 # Controls when the action will run. 
 on:
@@ -34,11 +34,13 @@ jobs:
         with:
           node_version: ${{ matrix.node_version }}
       
-      - name: run CI
+      - name: run Linter
         run: |
-          echo Running CI for the application...
+          echo Running Linter for the React Client...
           npm install # or yarn install
-          npm run start:lint # or yarn lint
+          cd client 
+          npm install
+          npm run lint # or yarn lint
       
       # Running, when linting was successful.
       - uses: actions/checkout@master
