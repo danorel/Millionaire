@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import styles from "./Layout.module.css"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
@@ -13,15 +12,21 @@ import {
 
 import { selectStep } from "./reducers/actionSlice"
 
-import { Container } from "./components/Layout/Container/Container"
-
-import { GridBox, GridItemBody, GridItemHeader } from "./components/Layout/Grid"
+import { LayoutContainer } from "./components/layout/container"
 
 import {
-    GridBoxItemScreen,
-    GridBoxContainer,
-    GridBoxItemLevels
-} from "../../components/layout/grid"
+    LayoutGridBox,
+    LayoutGridItemBody,
+    LayoutGridItemHeader
+} from "./components/layout/grid"
+
+import {
+    ViewGridBox,
+    ViewGridBoxItemPrimary,
+    ViewGridBoxItemSecondary
+} from "./components/layout/grid"
+
+import { ViewFlexBox } from "./components/layout/flex"
 
 import {
     LevelsComponent,
@@ -29,7 +34,7 @@ import {
     QuestionComponent
 } from "./components"
 
-import { Navbar } from "../../components/navigation/Navbar/Navbar"
+import { Navbar } from "./components/navigation/Navbar/Navbar"
 
 type PlayProps = {}
 
@@ -56,30 +61,30 @@ export const PlayComponent: React.FC<PlayProps> = () => {
 
     return (
         <React.Fragment>
-            <Container>
-                <GridBox>
-                    <GridItemHeader>
+            <LayoutContainer>
+                <LayoutGridBox>
+                    <LayoutGridItemHeader>
                         <Navbar open={open} onClick={onClickOpen} />
-                    </GridItemHeader>
-                    <GridItemBody>
-                        <GridBoxContainer>
-                            <GridBoxItemScreen>
+                    </LayoutGridItemHeader>
+                    <LayoutGridItemBody>
+                        <ViewGridBox>
+                            <ViewGridBoxItemPrimary>
                                 {open ? (
-                                    <div className={styles.div__flex_screen}>
+                                    <ViewFlexBox>
                                         <QuestionComponent text={question} />
                                         <AnswersComponent values={answers} />
-                                    </div>
+                                    </ViewFlexBox>
                                 ) : (
                                     <LevelsComponent step={step} />
                                 )}
-                            </GridBoxItemScreen>
-                            <GridBoxItemLevels>
+                            </ViewGridBoxItemPrimary>
+                            <ViewGridBoxItemSecondary>
                                 <LevelsComponent step={step} />
-                            </GridBoxItemLevels>
-                        </GridBoxContainer>
-                    </GridItemBody>
-                </GridBox>
-            </Container>
+                            </ViewGridBoxItemSecondary>
+                        </ViewGridBox>
+                    </LayoutGridItemBody>
+                </LayoutGridBox>
+            </LayoutContainer>
         </React.Fragment>
     )
 }
