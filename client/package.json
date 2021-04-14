@@ -10,7 +10,6 @@
     "bugs": {
         "url": "https://github.com/danorel/Millionaire/issues"
     },
-    "homepage": "https://github.com/danorel/Millionaire#readme",
     "description": "Golang web application as technical assignment",
     "keywords": [
         "Golang",

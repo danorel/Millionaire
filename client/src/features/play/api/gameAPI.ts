@@ -155,6 +155,6 @@ export function fetchConfigMock() {
 export function fetchConfig() {
     return axios.request<void, { data: Config }>({
         method: "GET",
-        url: "http://server:6784/api/game"
+        url: "/api/game"
     })
 }
