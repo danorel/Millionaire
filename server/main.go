@@ -20,8 +20,6 @@ func main() {
 	configs.LoadConfigs()
 
 	server := api.InitializeHTTPServer(httpServerExitDone)
-	api.InitializeHTTPRoutes()
-
 	middleware.InitializeView()
 
 	// Wait for kill signal of channel

@@ -3,16 +3,10 @@ package api
 import (
 	"encoding/json"
 	"github.com/danorel/Millionaire/configs"
-	"github.com/danorel/Millionaire/pkg/middleware"
 	"net/http"
 )
 
 func GameRouteHandler(w http.ResponseWriter, r *http.Request) {
-	middleware.InitializeCors(&w, r)
-	if (*r).Method == "OPTIONS" {
-		return
-	}
-
 	if r.URL.Path != "/api/game" {
 		http.Error(w, "404 not found.", http.StatusNotFound)
 		return
