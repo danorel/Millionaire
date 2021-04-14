@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { withRouter, RouteComponentProps } from "react-router-dom"
 
-import styles from "./Answers.module.css"
+import styles from "./Layout.module.css"
 
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 

@@ -1,0 +1,39 @@
+.button__span_content {
+    color: #1c1c21;
+}
+
+.button__span_content_active {
+    color: #ff8b37;
+}
+
+.button__span_content_complete {
+    color: #d0d0d8;
+}
+
+@media screen and (min-width: 320px) {
+    .button__span_content,
+    .button__span_content_active,
+    .button__span_content_complete {
+        font-family: Inter, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 4vmin;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .button__span_content,
+    .button__span_content_active,
+    .button__span_content_complete {
+        font-family: Inter, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 2.5vmin;
+        display: flex;
+        align-items: center;
+        margin: auto;
+    }
+}

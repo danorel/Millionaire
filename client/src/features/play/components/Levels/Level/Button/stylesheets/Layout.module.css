@@ -1,0 +1,40 @@
+/**
+ * Content stylesheets.
+ * Grid structure of the AnswerComponent content and it's child components.
+ */
+
+@media screen and (min-width: 320px) {
+    .div__grid_content_container {
+        display: grid;
+        height: 14vmin;
+        grid-template-columns: 10% auto 10%;
+        grid-template-rows: 100%;
+    }
+
+    .div__grid_content_item {
+        display: flex;
+        align-items: center;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: auto;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .div__grid_content_container {
+        display: grid;
+        height: 6vmin;
+        grid-template-columns: 10% auto 10%;
+        grid-template-rows: 100%;
+    }
+
+    .div__grid_content_item {
+        display: flex;
+        align-items: center;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: auto;
+    }
+}

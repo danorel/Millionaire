@@ -1,6 +1,6 @@
 import React from "react"
+import stylesFrame from "./stylesheets/Frame.module.css"
 import stylesLayout from "./stylesheets/Layout.module.css"
-import stylesButton from "./stylesheets/Button.module.css"
 import stylesContent from "./stylesheets/Content.module.css"
 
 type ButtonProps = {
@@ -22,12 +22,12 @@ export const Button: React.FC<ButtonProps> = ({
         <div
             className={
                 loading
-                    ? stylesButton.div__button_frame_loading
+                    ? stylesFrame.div__button_frame_loading
                     : fail
-                    ? stylesButton.div__button_frame_fail
+                    ? stylesFrame.div__button_frame_fail
                     : success
-                    ? stylesButton.div__button_frame_success
-                    : stylesButton.div__button_frame
+                    ? stylesFrame.div__button_frame_success
+                    : stylesFrame.div__button_frame
             }
         >
             <div className={stylesLayout.div__grid_content_container}>
