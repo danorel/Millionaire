@@ -2,76 +2,24 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"github.com/danorel/Millionaire/pkg/api"
+	"github.com/danorel/Millionaire/pkg/middleware"
 	"log"
-	"net/http"
 	"os"
 	"os/signal"
 	"sync"
 	"syscall"
 	"time"
-
-	"github.com/danorel/Millionaire/config"
 )
-
-func rootRouteHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		http.Error(w, "404 not found.", http.StatusNotFound)
-		return
-	}
-
-	if r.Method != "GET" {
-		http.Error(w, "Method is not supported.", http.StatusNotFound)
-		return
-	}
-
-	if _, err := fmt.Fprintf(w, "Hello, Root Route!"); err != nil {
-		return
-	}
-}
-
-func startHttpServer(wg *sync.WaitGroup) *http.Server {
-	log.Println("Reading configurations...")
-
-	config.Initialize()
-	serverConfig := (*config.Config).ServerConfig()
-
-	log.Println("Starting server...")
-
-	srv := &http.Server{Addr: serverConfig.Addr()}
-
-	http.HandleFunc("/api", rootRouteHandler)
-
-	go func() {
-		defer wg.Done() // let main know we are done cleaning up
-
-		log.Printf("Server is running on port %v successfully!", serverConfig.Port())
-
-		// always returns error. ErrServerClosed on graceful close
-		if err := srv.ListenAndServe(); err != http.ErrServerClosed {
-			// unexpected error. port in use?
-			log.Fatalf("Failed to initialize server: %v\n", err)
-		}
-		}()
-
-	// returning reference so caller can call Shutdown()
-	return srv
-}
-
-func startViewServing() {
-	internalConfig 	  := (*config.Config).InternalConfig()
-
-	if internalConfig.Mode() != "development" {
-		http.Handle("/", http.FileServer(http.Dir("client/build")))
-	}
-}
 
 func main() {
 	httpServerExitDone := &sync.WaitGroup{}
 	httpServerExitDone.Add(1)
 
-	server := startHttpServer(httpServerExitDone)
-	startViewServing()
+	server := api.InitializeHTTPServer(httpServerExitDone)
+	api.InitializeHTTPRoutes()
+
+	middleware.InitializeView()
 
 	// Wait for kill signal of channel
 	quit := make(chan os.Signal)
