@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../../app/store"
-import { fetchConfig } from "../api/gameAPI"
+import { fetchConfig, fetchConfigMock } from "../api/gameAPI"
 
 import { Config, ButtonIndex } from "MyModels"
 
@@ -25,6 +25,7 @@ export const fetchConfigAsync = createAsyncThunk(
     "game/fetchConfig",
     async () => {
         const response = await fetchConfig()
+        console.log(response)
         // The value we return becomes the `fulfilled` action payload
         return response.data
     }
