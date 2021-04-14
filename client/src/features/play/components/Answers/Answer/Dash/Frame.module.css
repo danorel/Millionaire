@@ -9,9 +9,7 @@
     -o-background-size: cover;
 }
 
-/*
- * Extra Small Devices, Phones
- */
+/* Extra Small Devices, Phones */
 @media only screen and (min-width: 480px) {
     .div__image_frame {
         margin-top: 7px;

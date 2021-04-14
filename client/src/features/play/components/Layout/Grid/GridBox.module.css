@@ -1,0 +1,18 @@
+.div__grid {
+    width: 100%;
+    display: grid;
+}
+
+@media screen and (min-width: 320px) {
+    .div__grid {
+        grid-template-rows: 10% auto;
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (min-width: 760px) {
+    .div__grid {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+    }
+}
