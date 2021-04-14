@@ -2,24 +2,30 @@ package api
 
 import (
 	"github.com/danorel/Millionaire/configs"
+	"github.com/danorel/Millionaire/pkg/middleware"
 	"log"
 	"net/http"
 	"sync"
 )
 
-func InitializeHTTPRoutes() {
-	http.HandleFunc("/api/game", GameRouteHandler)
-}
-
 func InitializeHTTPServer(wg *sync.WaitGroup) *http.Server {
-	log.Println("Reading configurations...")
-
+	log.Println("Loading configurations...")
 	configs.LoadConfigs()
 	serverConfig := (*configs.Config).ServerConfig()
 
-	log.Println("Starting server...")
+	log.Println("Setting routes...")
+	h := http.NewServeMux()
+	h.HandleFunc("/api/game", GameRouteHandler)
 
-	srv := &http.Server{Addr: serverConfig.Addr()}
+	log.Println("Starting server...")
+	srv := &http.Server{
+		Addr: serverConfig.Addr(),
+		Handler: middleware.ResponseCORS(
+			middleware.ResponseHostTracker(
+				middleware.ResponseTimeTracker(h),
+			),
+		),
+	}
 
 	go func() {
 		defer wg.Done() // let main know we are done cleaning up
