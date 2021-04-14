@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import styles from "./Play.module.css"
+import styles from "./Layout.module.css"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
@@ -13,14 +13,22 @@ import {
 
 import { selectStep } from "./reducers/actionSlice"
 
+import { Container } from "./components/Layout/Container/Container"
+
+import { GridBox, GridItemBody, GridItemHeader } from "./components/Layout/Grid"
+
 import {
     GridBoxItemScreen,
     GridBoxContainer,
     GridBoxItemLevels
 } from "../../components/layout/grid"
-import { QuestionComponent } from "./components/Question/Question"
-import { AnswersComponent } from "./components/Answers/Answers"
-import { LevelsComponent } from "./components/Levels/Levels"
+
+import {
+    LevelsComponent,
+    AnswersComponent,
+    QuestionComponent
+} from "./components"
+
 import { Navbar } from "../../components/navigation/Navbar/Navbar"
 
 type PlayProps = {}
@@ -48,12 +56,12 @@ export const PlayComponent: React.FC<PlayProps> = () => {
 
     return (
         <React.Fragment>
-            <div className={styles.div__container}>
-                <div className={styles.div__grid__magic}>
-                    <div className={styles.div__grid_magic_up}>
+            <Container>
+                <GridBox>
+                    <GridItemHeader>
                         <Navbar open={open} onClick={onClickOpen} />
-                    </div>
-                    <div className={styles.div__grid_magic_down}>
+                    </GridItemHeader>
+                    <GridItemBody>
                         <GridBoxContainer>
                             <GridBoxItemScreen>
                                 {open ? (
@@ -69,9 +77,9 @@ export const PlayComponent: React.FC<PlayProps> = () => {
                                 <LevelsComponent step={step} />
                             </GridBoxItemLevels>
                         </GridBoxContainer>
-                    </div>
-                </div>
-            </div>
+                    </GridItemBody>
+                </GridBox>
+            </Container>
         </React.Fragment>
     )
 }
