@@ -39,14 +39,14 @@ jobs:
           echo Running Linter for the React Client...
           cd client 
           npm install
-          npm run start:lint
+          npm run eslint
           
       - name: Run Formatter
         run: |
           echo Running Formatter for React Client...
           cd client
           npm install
-          npm run start:formatting
+          npm run formatting
       
       # Running, when linting was successful.
       - uses: actions/checkout@master
