@@ -16,6 +16,8 @@ services:
         restart: unless-stopped
         expose:
             - ${SERVER_PORT}
+        ports:
+            - ${SERVER_PORT}:${SERVER_PORT}
         volumes:
             - ./server:/app/server
             - ./server/go.mod:/app/server/go.mod
