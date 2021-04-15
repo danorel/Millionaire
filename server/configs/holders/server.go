@@ -1,4 +1,4 @@
-package env
+package holders
 
 import "os"
 
@@ -22,10 +22,10 @@ func (c *ServerConfig) Addr() string {
 	return c.addr
 }
 
-var ServerConfigInstance *ServerConfig
+var ServerConfigSingleton *ServerConfig
 
 func LoadServerConfig() {
-	ServerConfigInstance = &ServerConfig {
+	ServerConfigSingleton = &ServerConfig {
 		protocol: os.Getenv("SERVER_PROTOCOL"),
 		host:	  os.Getenv("SERVER_HOST"),
 		port:	  os.Getenv("SERVER_PORT"),

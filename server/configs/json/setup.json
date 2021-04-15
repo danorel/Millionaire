@@ -1,0 +1,270 @@
+{
+    "options": [
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "Романіст"
+                },
+                {
+                    "correct": false,
+                    "text": "Драматург"
+                },
+                {
+                    "correct": true,
+                    "text": "Поет"
+                },
+                {
+                    "correct": false,
+                    "text": "Есеїст"
+                }
+            ],
+            "question": "Хто 1-го отримав Нобелівську премію з літератури?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": true,
+                    "text": "М"
+                },
+                {
+                    "correct": false,
+                    "text": "Н"
+                },
+                {
+                    "correct": false,
+                    "text": "ПРО"
+                },
+                {
+                    "correct": false,
+                    "text": "П"
+                }
+            ],
+            "question": "З якої букви починаються слова, опубліковані в 16-му томі останнього видання Великої радянської енциклопедії?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "Фонвізін Д. І."
+                },
+                {
+                    "correct": false,
+                    "text": "Державін Р."
+                },
+                {
+                    "correct": true,
+                    "text": "А. Н. Радищев"
+                },
+                {
+                    "correct": false,
+                    "text": "Н.М. Карамзін"
+                }
+            ],
+            "question": "Хто з перерахованих був пажем у часи Катерини II?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "Гафній"
+                },
+                {
+                    "correct": true,
+                    "text": "Кобальт"
+                },
+                {
+                    "correct": false,
+                    "text": "Берилій"
+                },
+                {
+                    "correct": false,
+                    "text": "Телур"
+                }
+            ],
+            "question": "Який хімічний елемент названий на честь злого підземного гнома?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": true,
+                    "text": "Тбілісі"
+                },
+                {
+                    "correct": false,
+                    "text": "Єреван"
+                },
+                {
+                    "correct": false,
+                    "text": "Баку"
+                },
+                {
+                    "correct": false,
+                    "text": "Мінськ"
+                }
+            ],
+            "question": "В якій з цих столиць союзних республік раніше з'явилося метро?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "3"
+                },
+                {
+                    "correct": false,
+                    "text": "4"
+                },
+                {
+                    "correct": false,
+                    "text": "5"
+                },
+                {
+                    "correct": true,
+                    "text": "6"
+                }
+            ],
+            "question": "Скільки морів омивають Балканський півострів?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": true,
+                    "text": "Жнейка"
+                },
+                {
+                    "correct": false,
+                    "text": "Шапка"
+                },
+                {
+                    "correct": false,
+                    "text": "Хвороба"
+                },
+                {
+                    "correct": false,
+                    "text": "Пічка"
+                }
+            ],
+            "question": "Що таке лобогрейка?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "Один"
+                },
+                {
+                    "correct": false,
+                    "text": "Два"
+                },
+                {
+                    "correct": true,
+                    "text": "Три"
+                },
+                {
+                    "correct": false,
+                    "text": "Чотири"
+                }
+            ],
+            "question": "Скільки разів у добу подзаводят куранти Спаської башти Кремля?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": true,
+                    "text": "«Обережність»"
+                },
+                {
+                    "correct": false,
+                    "text": "«Піонери»"
+                },
+                {
+                    "correct": false,
+                    "text": "«Останній з могікан»"
+                },
+                {
+                    "correct": false,
+                    "text": "«Звіробій»"
+                }
+            ],
+            "question": "Який роман Фенімор Купер написав на спір з дружиною?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "Юнг"
+                },
+                {
+                    "correct": false,
+                    "text": "Гегель"
+                },
+                {
+                    "correct": true,
+                    "text": "Ніцше"
+                },
+                {
+                    "correct": false,
+                    "text": "Шопенгауер"
+                }
+            ],
+            "question": "Хто з цих філософів в 1864 році написав музику на вірші А. С. Пушкіна «Заклинання» і «Зимовий вечір»?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "Кирасири"
+                },
+                {
+                    "correct": false,
+                    "text": "Улани"
+                },
+                {
+                    "correct": true,
+                    "text": "Драгуни"
+                },
+                {
+                    "correct": false,
+                    "text": "Гусари"
+                }
+            ],
+            "question": "Який вид кавалерії призначався для бойових дій як в кінному, так і в пішому строю?"
+        },
+        {
+            "answers": [
+                {
+                    "correct": false,
+                    "text": "Валентин"
+                },
+                {
+                    "correct": false,
+                    "text": "Євген"
+                },
+                {
+                    "correct": true,
+                    "text": "Георгій"
+                },
+                {
+                    "correct": false,
+                    "text": "Віктор"
+                }
+            ],
+            "question": "Яке ім'я не приймав жоден папа римський?"
+        }
+    ],
+    "prizes": [
+        "$1,000,000",
+        "$500,000",
+        "$250,000",
+        "$125,000",
+        "$64,000",
+        "$32,000",
+        "$16,000",
+        "$8,000",
+        "$4,000",
+        "$2,000",
+        "$1,000",
+        "$500"
+    ]
+}

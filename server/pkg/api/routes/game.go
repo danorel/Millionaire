@@ -1,4 +1,4 @@
-package api
+package routes
 
 import (
 	"encoding/json"
@@ -20,7 +20,6 @@ func GameRouteHandler(w http.ResponseWriter, r *http.Request) {
 	clientConfig := (*configs.Config).ClientConfig()
 
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(http.StatusCreated)
 
 	err := json.NewEncoder(w).Encode(clientConfig)

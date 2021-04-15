@@ -1,40 +1,39 @@
 package configs
 
 import (
-	"fmt"
-	"github.com/danorel/Millionaire/configs/env"
-	"github.com/danorel/Millionaire/configs/json"
+	"github.com/danorel/Millionaire/configs/holders"
+	"log"
 )
 
 type ApplicationConfig struct {
-	stateConfig  env.StateConfig
-	serverConfig env.ServerConfig
-	clientConfig json.ClientConfig
+	stateConfig  holders.StateConfig
+	serverConfig holders.ServerConfig
+	clientConfig holders.ClientConfig
 }
 
-func (c *ApplicationConfig) StateConfig() env.StateConfig {
+func (c *ApplicationConfig) StateConfig() holders.StateConfig {
 	return c.stateConfig
 }
-func (c *ApplicationConfig) ServerConfig() env.ServerConfig {
+func (c *ApplicationConfig) ServerConfig() holders.ServerConfig {
 	return c.serverConfig
 }
-func (c *ApplicationConfig) ClientConfig() json.ClientConfig {
+func (c *ApplicationConfig) ClientConfig() holders.ClientConfig {
 	return c.clientConfig
 }
 
 var Config *ApplicationConfig
 
 func LoadConfigs() {
-	env.LoadStateConfig()
-	env.LoadServerConfig()
-	err := json.LoadClientConfig("configs/json/client.json")
+	holders.LoadStateConfig()
+	holders.LoadServerConfig()
+	err := holders.LoadClientConfig("configs/json/setup.json")
 	if err != nil {
-		fmt.Printf("Error occurred during file reading: %v", err.Error())
+		log.Fatalf("%v", err.Error())
 		return
 	}
 	Config = &ApplicationConfig{
-		stateConfig:  *env.StateConfigInstance,
-		serverConfig: *env.ServerConfigInstance,
-		clientConfig: *json.ClientConfigInstance,
+		stateConfig:  *holders.StateConfigSingleton,
+		serverConfig: *holders.ServerConfigSingleton,
+		clientConfig: *holders.ClientConfigSingleton,
 	}
 }
