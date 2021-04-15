@@ -34,19 +34,12 @@ jobs:
         with:
           node_version: ${{ matrix.node_version }}
       
-      - name: Run Linter
+      - name: Run Tests
         run: |
-          echo Running Linter for the React Client...
+          echo Running Tests for the React Client...
           cd client 
           npm install
-          npm run eslint
-          
-      - name: Run Formatter
-        run: |
-          echo Running Formatter for React Client...
-          cd client
-          npm install
-          npm run formatting
+          npm run test
       
       # Running, when linting was successful.
       - uses: actions/checkout@master
