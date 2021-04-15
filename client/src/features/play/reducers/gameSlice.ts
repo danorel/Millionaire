@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../../app/store"
-import { fetchConfig, fetchConfigMock } from "../api/gameAPI"
+import { fetchConfig } from "../api/gameAPI"
 
 import { Config, ButtonIndex } from "MyModels"
 

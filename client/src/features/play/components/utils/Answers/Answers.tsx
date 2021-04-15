@@ -20,8 +20,13 @@ interface AnswersProps extends RouteComponentProps {
     values: Answer[]
 }
 
-const LettersLeft = ["A", "B"]
-const LettersRight = ["C", "D"]
+const Letters = ["A", "B", "C", "D"]
+const LettersStyles = [
+    styles.grid__item_A,
+    styles.grid__item_B,
+    styles.grid__item_C,
+    styles.grid__item_D
+]
 
 const AnswersComponentNonRouted: React.FC<AnswersProps> = ({
     values,
@@ -52,30 +57,15 @@ const AnswersComponentNonRouted: React.FC<AnswersProps> = ({
     return (
         <React.Fragment>
             <div className={styles.grid__container}>
-                <div className={styles.grid__item_left}>
-                    {values
-                        .slice(0, 2)
-                        .map((answer) => answer.text)
-                        .map((value, index) => (
-                            <AnswerComponent
-                                index={index as ButtonIndex}
-                                letter={LettersLeft[index]}
-                                text={value}
-                            />
-                        ))}
-                </div>
-                <div className={styles.grid__item_right}>
-                    {values
-                        .slice(2, values.length)
-                        .map((answer) => answer.text)
-                        .map((value, index) => (
-                            <AnswerComponent
-                                index={(index + 2) as ButtonIndex}
-                                letter={LettersRight[index]}
-                                text={value}
-                            />
-                        ))}
-                </div>
+                {values.map((value, index) => (
+                    <div className={LettersStyles[index]}>
+                        <AnswerComponent
+                            index={index as ButtonIndex}
+                            letter={Letters[index]}
+                            text={values[index].text}
+                        />
+                    </div>
+                ))}
             </div>
         </React.Fragment>
     )
