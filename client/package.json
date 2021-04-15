@@ -24,6 +24,20 @@
         "eslint": "tsc --noEmit && eslint src/**/*.ts{,x} --fix",
         "formatting": "prettier --write \"src/**/*.{js,jsx,ts,tsx,html,css,json}\" --ignore-unknown"
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*": [
+            "npm run formatting"
+        ],
+        "src/**/*.{js,jsx,ts,tsx,html,css,json}": [
+            "npm run eslint",
+            "git add"
+        ]
+    },
     "dependencies": {
         "@reduxjs/toolkit": "^1.5.1",
         "@testing-library/jest-dom": "^4.2.4",
