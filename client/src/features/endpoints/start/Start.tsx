@@ -18,9 +18,7 @@ import {
     ButtonComponent
 } from "../components/utils"
 
-type StartProps = {}
-
-export const StartComponent: React.FC<StartProps> = (props: StartProps) => (
+export const StartComponent: React.FC<any> = (props) => (
     <React.Fragment>
         <LayoutContainer background>
             <LayoutVerticalContainer>

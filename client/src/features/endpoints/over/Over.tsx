@@ -23,9 +23,7 @@ import {
 } from "../components/utils"
 import { selectStep } from "../../play/reducers/actionSlice"
 
-type OverProps = {}
-
-export const OverComponent: React.FC<OverProps> = () => {
+export const OverComponent: React.FC<any> = () => {
     const step = useAppSelector(selectStep)
 
     const prizes = useAppSelector(selectPrizes)

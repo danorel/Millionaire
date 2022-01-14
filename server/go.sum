@@ -1,5 +1,7 @@
 github.com/cespare/reflex v0.3.0 h1:9q8ZXMh+oW4quohPBcLsT56TFl4/DeQsTjZASe4wgoY=
 github.com/cespare/reflex v0.3.0/go.mod h1:I+0Pnu2W693i7Hv6ZZG76qHTY0mgUa7uCIfCtikXojE=
+github.com/cespare/reflex v0.3.1 h1:N4Y/UmRrjwOkNT0oQQnYsdr6YBxvHqtSfPB4mqOyAKk=
+github.com/cespare/reflex v0.3.1/go.mod h1:I+0Pnu2W693i7Hv6ZZG76qHTY0mgUa7uCIfCtikXojE=
 github.com/creack/pty v1.1.11 h1:07n33Z8lZxZ2qwegKbObQohDhXDQxiMMz1NOUGYlesw=
 github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/fsnotify/fsnotify v1.4.7 h1:IXs+QLmnXW2CcXuY+8Mzv/fWEsPGWxqefPtCP5CnV9I=

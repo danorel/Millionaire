@@ -58,7 +58,7 @@ const AnswersComponentNonRouted: React.FC<AnswersProps> = ({
         <React.Fragment>
             <div className={styles.grid__container}>
                 {values.map((value, index) => (
-                    <div className={LettersStyles[index]}>
+                    <div key={index} className={LettersStyles[index]}>
                         <AnswerComponent
                             index={index as ButtonIndex}
                             letter={Letters[index]}

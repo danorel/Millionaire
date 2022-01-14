@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { RouteComponentProps } from "react-router-dom"
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
@@ -37,9 +36,11 @@ import {
 
 import { Navbar } from "./components/navigation/Navbar/Navbar"
 
-interface PlayProps extends RouteComponentProps {}
+interface PlayComponentProps {
+    history: History
+}
 
-export const PlayComponent: React.FC<PlayProps> = (props) => {
+export const PlayComponent: React.FC<PlayComponentProps> = (props) => {
     const [open, setOpen] = useState(true)
 
     const step = useAppSelector(selectStep)
@@ -62,7 +63,7 @@ export const PlayComponent: React.FC<PlayProps> = (props) => {
     }, [status, dispatch])
 
     useEffect(() => {
-        if (winner) props.history.push("/over")
+        if (winner) props.history.pushState(null, "", "/over")
     }, [props.history, winner])
 
     const onClickOpen = (evt: React.MouseEvent<HTMLInputElement, MouseEvent>) =>

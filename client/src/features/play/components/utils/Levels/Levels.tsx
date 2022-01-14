@@ -18,6 +18,7 @@ export const LevelsComponent: React.FC<LevelProps> = ({
                 <div className={styles.grid__item}>
                     {prizes.map((value, index) => (
                         <LevelComponent
+                            key={index}
                             complete={prizes.length - 1 - index < step}
                             active={prizes.length - 1 - index === step}
                             text={value}
